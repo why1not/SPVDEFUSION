@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./CrossAssets/Thems/Winter.css" id="ThemsLink">
+    <link rel="stylesheet" href="./CrossAssets/main.css">
+    <link rel="stylesheet" href="./WeaponsPage/Desctop.css">
+    <link rel="stylesheet" href="./CrossAssets/Settings.css">
+    <link rel="stylesheet" href="./CrossAssets/Smooting/Smooth.css" id="SmoothinkLink">
+
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!--Сортировки, поиски и т.д-->
+    <article class="Window_One" >
+        <div class="header">
+            <div class="LogoHead">
+                <p>Справочник</p>
+            </div>
+            <div class="HeadButtons">
+                <div onclick="openSearchByType(this)">Типы</div>
+                <div onclick="openSearchByTop(this)">Топы</div>
+                <div onclick="openSearchByIvent(this)">Ивент</div>
+                <div class="btnSelected" onclick="openSearchByName(this)">Название</div>
+                <div onclick="openSravnenie(this)" id="SravnenieOpennButton _Window_One">Сравнение</div>
+            </div>
+        </div>
+
+        <!--Стандартные карточки-->
+        <aside id="StandartCard" hidden>
+            <div class="SearchName" id="SearchNameLabel">
+                Соритровака по урону + Двойная броня
+            </div>
+            <div class="CardsZone" id="CardZoneMain">
+                <!--
+                <div class="card">
+                    <div class="first-content">
+                        <img src="./qq71.png">
+                    </div>
+                    <div class="second-content">
+                        <span>Тяжёлоукладчик (Не заряженный)</span>
+                    </div>
+                </div>
+                -->
+            </div>
+        </aside>
+
+        <!--Поиск по типу-->
+        <aside id="SearchByType" hidden>
+            <div class="SettingName">
+                Поиск по типу вооружения
+            </div>
+            <div class="SettingsZone">
+                <div class="SortSatt" id="SortByTypeButton_Cold" onclick="filterWeaponsByType('Холодное')">
+                    Холодное
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_Rifle" onclick="filterWeaponsByType('Винтовка')">
+                    Винтовка
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_Automatic" onclick="filterWeaponsByType('Автомат')">
+                    Автомат
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_MachineGun" onclick="filterWeaponsByType('Пулемёт')">
+                    Пулемёт
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_Pistol" onclick="filterWeaponsByType('Пистолет')">
+                    Пистолет
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_Shotgun" onclick="filterWeaponsByType('Дробовик')">
+                    Дробовик
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_SMG" onclick="filterWeaponsByType('ПП')">
+                    ПП
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_Other" onclick="filterWeaponsByType('Разное')">
+                    Разное
+                </div>
+
+
+            </div>
+        </aside>
+
+        <!--Поиск по ивенту-->
+        <aside id="SearchByIvent" hidden>
+            <div class="SettingName">
+                Поиск по ивенту\сезону\изданию
+            </div>
+            <div class="SettingsZone3">
+                <div class="MainSettingSort">
+                    <div onclick="openBattlePass(this)" class="SortSatt GroupSort">
+                        Battle-pass
+                    </div>
+                    <div onclick="openNewYear(this)" class="SortSatt GroupSort">
+                        Новый год
+                    </div>
+                    <div onclick="openHellowen(this)" class="SortSatt GroupSort">
+                        Хэллоуин
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Zombie Издание')">
+                        Zombie Издание
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Snow')">
+                        Snow-издание
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Милитари 1945')">
+                        Милитари-1945
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Галовечеринка')">
+                        Гало-вечеринка
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Anarchy')">
+                        Анархия
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEd_Combo('Desert')">
+                        Desert издание
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEd_Combo('Lady')">
+                        Леди издание
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Color Delusion')">
+                        Color Delusion
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Rusted')">
+                        Rusted
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Starline')">
+                        Starline
+                    </div>
+                </div>
+                <!--
+                        Cursed Bones
+                -->
+                <div class="MainSettingSort" hidden id="BattlePass">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('1 Сезон')">
+                        Вторжение корпорации
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('2 Сезон')">
+                        Стимпанк
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('3 сезон')">
+                        Буря в пустыне
+                    </div>
+                </div>
+                <div class="MainSettingSort" hidden id="NewYear">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('New Year')">
+                        New Year
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Christmas')">
+                        Christmas
+                    </div>
+                </div>
+                <div class="MainSettingSort" hidden id="Hellowen">
+                    <div class="SortSatt" onclick="filterWeaponsByEd_Combo('Cursed Bones')">
+                        Cursed Bones
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Кровавая ночь')">
+                        Кровавая ночь
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Жуткий Хэллоуин')">
+                        Жуткий Хеллоуин
+                    </div>
+                </div>
+                
+            </div>
+        </aside>
+
+        <!--Поиск по топу-->
+        <aside id="SearchByTop" hidden>
+            <div class="SettingName">
+                Сортировка по топам
+            </div>
+            <div class="SettingsZone2">
+                <div class="MainSettingSort">
+                    <div class="SortSatt SSTT2" id="SortByTypeButton_Automatic" onclick="handleButtonClick(this, 'Автомат')">Автомат</div>
+                    <div class="SortSatt SSTT2" id="SortByTypeButton_Rifle" onclick="handleButtonClick(this, 'Винтовка')">Винтовка</div>
+                    <div class="SortSatt SSTT2" id="SortByTypeButton_Shotgun" onclick="handleButtonClick(this, 'Дробовик')">Дробовик</div>
+                    <div class="SortSatt SSTT2" id="SortByTypeButton_MachineGun" onclick="handleButtonClick(this, 'Пулемёт')">Пулемёт</div>
+                    <div class="SortSatt SSTT2" id="SortByTypeButton_SMG" onclick="handleButtonClick(this, 'ПП')">Пистолет-пулемёт</div>
+                    <div class="SortSatt SSTT2" id="SortByTypeButton_Pistol" onclick="handleButtonClick(this, 'Пистолет')">Пистолет</div>
+                    <div class="SortSatt SSTT2" id="SortByTypeButton_Cold" onclick="handleButtonClick(this, 'Холодное')">Холодное</div>
+                    <div class="SortSatt SSTT2" id="SortByTypeButton_Other" onclick="handleButtonClick(this, 'Разное')">Разное</div>
+                </div>
+            
+                <div class="MainSettingSort">
+                    <div class="SortSatt" onclick="handleButtonClick2(this, 'Без прокачки')">Без прокачки</div>
+                    <div class="SortSatt" onclick="handleButtonClick2(this, 'Полная прокачка')">Полная прокачка</div>
+                </div>
+            
+                <div class="MainSettingSort">
+                    <div class="SortSatt" onclick="handleButtonClick3(this, 'Без брони')">Без брони</div>
+                    <div class="SortSatt" onclick="handleButtonClick3(this, 'Обычная броня')">Обычная броня</div>
+                    <div class="SortSatt" onclick="handleButtonClick3(this, 'Укреплённая броня')">Укреплённая броня</div>
+                    <div class="ButtonTopsSearch" onclick="sortAndPrintStockTimeNoArmor()">Рассчитать топ</div>
+                </div>
+            </div>
+        </aside>
+
+        <!--Поиск по названию-->
+        <aside id="SearchByName">
+            <div class="SettingName">
+                Поиск по названию
+            </div>
+            <div class="SearchByNameZone">
+                <div class="SearchConteiner">
+                    <input type="text" class="SearchInput" pattern=".{1,}" placeholder="Введи название оружия" oninput="search(this)">
+                    <div class="ClearInputName" onclick="clearSearchInput()">×</div>
+                </div>
+            </div>
+            <div class="SearchResultZone">
+                <div class="ResultCard" id="ResuldCardByName">
+                    <!--
+                    <div class="ResultRow">
+                        <div class="NameRow">
+                             Фамас
+                        </div>
+                        <div class="OtherLabelRow">
+                            <div class="TypeWeaponRR OLR_deco OLRD_FIRST">
+                                Автомат
+                            </div>
+                            <div class="OLR_deco">
+                                <img src="./assets/EventImage/BADGE_SEASON2.png">
+                            </div>
+                            <div class="TypeWeaponRR OLR_deco OLRD_LAST">
+                                Пули
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            </div>
+        </aside>
+    </article>
+    
+    <!--Просмотр Оружия-->
+    <article class="Window_Two" hidden>
+        <div class="header">
+            <div class="LogoHead">
+                <p id='logoandback' onclick="BackToOne()">Справочник</p>
+            </div>
+            <div class="HeadButtons">
+                <div onclick="openSravnenie(this)"  id="SravnenieOpennButton _Window_Two" class="AddWpToSravIN">Сравнить</div>
+                <div>Поделиться</div>
+            </div>
+        </div>
+        <div class="WeaponPrevZone">
+            <div class="StatsWeaponZone">
+                <div class="weapon-stat-card">
+                    <div class="weapon-stat-card-inner">
+                        <div class="weapon-stat-card-front">
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Урон
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_damageSt"></p>
+                                    <p id="WPView_damageFl"></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Обойма
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_clipSt"></p>
+                                    <p id="WPView_clipFl"></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Запас
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_boxSt"></p>
+                                    <p id="WPView_boxFl"></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Темп
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_temp"></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Дальность
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_range"></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="weapon-stat-card-back">
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Урон
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_damageSt2"></p>
+                                    <p id="WPView_damageFl2"></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Обойма
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_clipSt2"></p>
+                                    <p id="WPView_clipFl2"></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Запас
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_boxSt2"></p>
+                                    <p id="WPView_boxFl2"></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Темп
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_temp2"></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Дальность
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_range2"></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Перезарядка
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_reload"></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Цена
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_price"></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Тип
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_type"></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Тип урона
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_damageType"></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Серия
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_series"></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="WeaponPrevIMGZone">
+                <div class="WPIZ_Area">
+                    <img src="./qq71.png" id="WPView_Image">
+                    <div class="SkinsZone containerskins" hidden id="containerSkinwWpis">
+                        <!--
+                                            <div class="SkinButtonAndPrev">
+                                                <img src="./qq71.png">
+                                            </div>
+                                            -->
+                        
+                    </div>
+                </div>
+                <div class="WPIZ_Buttons">
+                    <div id="buttonSkinsWpis" onclick="OpenSkinsZone()">Скины</div>
+                </div>
+            </div>
+        </div>
+        <div class="TimeZone">
+            <div class="TimeSettings">
+                <div class="inputBox">
+                    <input required="" type="number" placeholder="..." value="0" min="0" max="99" id="PercentProtection" onchange="TimeConque()">
+                    <span>% Защиты:</span>
+                </div>
+                <div class="inputBox">
+                    <input required="" type="number" placeholder="..." value="0" min="0" max="99" id="PercentDopDamage"  onchange="TimeConque()">
+                    <span>% Доп урона:</span>
+                </div>
+                <div class="inputBox">
+                    <select id="PumpLevel" onchange="TimeConque()">
+                        <option value="Фулл" selected>Фулл</option>
+                        <option value="Сток">Сток</option>
+                    </select>
+                    <span>Прокачка:</span>
+                </div>
+                <div class="inputBox">
+                    <select id="PumpLevelHelmet" onchange="TimeConque()">
+                        <option value="Без каски">Без каски</option>
+                        <option value="Обычная">Обычная</option>
+                        <option value="Укреплённая" selected>Укреплённая</option>
+                    </select>
+                    <span>Каска:</span>
+                </div>
+                <div class="inputBox">
+                    <select id="PumpLevelArmor" onchange="TimeConque()">
+                        <option value="Без брони">Без брони</option>
+                        <option value="Обычная">Обычная</option>
+                        <option value="Укреплённая" selected>Укреплённая</option>
+                    </select>
+                    <span>Броня:</span>
+                </div>
+            </div>
+            <div class="TableTime">
+                <div class="Thead">
+                    <div>Часть тела</div>
+                    <div>Кол. выстр.</div>
+                    <div>Время (мс)</div>
+                </div>
+                <table class="weapon-time-table">
+                    <tbody>
+                        <tr class="tr-time">
+                            <td class="td-time">Голова</td>
+                            <td class="td-time" id="CollBullets1"></td>
+                            <td class="td-time" id="CollTime1"></td>
+                        </tr>
+                        <tr class="tr-time">
+                            <td class="td-time">Тело</td>
+                            <td class="td-time" id="CollBullets2"></td>
+                            <td class="td-time" id="CollTime2"></td>
+                        </tr>
+                        <tr class="tr-time">
+                            <td class="td-time">Плечо</td>k
+                            <td class="td-time"  id="CollBullets3"></td>
+                            <td class="td-time" id="CollTime3"></td>
+                        </tr>
+                        <tr class="tr-time">
+                            <td class="td-time">Предплечье</td>
+                            <td class="td-time" id="CollBullets4"></td>
+                            <td class="td-time" id="CollTime4"></td>
+                        </tr>
+                        <tr class="tr-time">
+                            <td class="td-time">Кисть</td>
+                            <td class="td-time" id="CollBullets5"></td>
+                            <td class="td-time" id="CollTime5"></td>
+                        </tr>
+                        <tr class="tr-time">
+                            <td class="td-time">Бедро</td>
+                            <td class="td-time" id="CollBullets6"></td>
+                            <td class="td-time" id="CollTime6"></td>
+                        </tr>
+                        <tr class="tr-time">
+                            <td class="td-time">Голень</td>
+                            <td class="td-time" id="CollBullets7"></td>
+                            <td class="td-time" id="CollTime7"></td>
+                        </tr>
+                        <tr class="tr-time">
+                            <td class="td-time">Ступня</td>
+                            <td class="td-time" id="CollBullets8"></td>
+                            <td class="td-time" id="CollTime8"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </article>
+
+    <!--Режим сравнения-->
+    <article class="Window_Tree" hidden>
+        <div class="headerSrav">
+            <div class="HeadSravBack" onclick="findSravnenieElement();">Назад</div>
+            <div class="HeadSravAddMore" onclick="showBlockSrav()">Добавить к сравнению</div>
+            <select class="HeadSravAddMore" id="sravPupmLevel" onchange="toggleTableVisibility(this)">
+                <option value="Сток">Сток</option>
+                <option value="Фулл" selected>Фулл</option>
+            </select>
+            <select class="HeadSravAddMore">
+                <!--<option value="Тело" disabled>Тело</option>-->
+                <option value="Голова" selected>Голова</option>
+            </select>
+        </div>
+        <div class="Srav_Zone" >
+            <div class="SravWeapontPrev">
+                <div class="ISWP_zz"></div>
+                <!--
+                <div class="ISWP_ImgZone">
+                    <img src="./qq71.png">
+                </div>
+                -->
+            </div>
+            <table class="weapon-srav-table">
+                <tbody class="tbody-srav" id="TableStok" hidden>
+                    <tr class="tr-Srav tr-Srav_Stok">
+                        <td class="td-srav NameSrav">Урон:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_Stok">
+                        <td class="td-srav NameSrav">Темп:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_Stok">
+                        <td class="td-srav NameSrav">Обойма:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_Stok">
+                        <td class="td-srav NameSrav">Запас:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_Stok">
+                        <td class="td-srav NameSrav">Дальность:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_Stok">
+                        <td class="td-srav NameSrav">Перезарядка:</td>
+                    </tr>
+                </tbody>
+                <tbody class="tbody-srav" id="TableFull">
+                    <tr class="tr-Srav tr-Srav_Full">
+                        <td class="td-srav NameSrav">Урон фулл:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_Full">
+                        <td class="td-srav NameSrav">Темп:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_Full">
+                        <td class="td-srav NameSrav">Обойма фулл:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_Full">
+                        <td class="td-srav NameSrav">Запас фулл:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_Full">
+                        <td class="td-srav NameSrav">Дальность:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_Full">
+                        <td class="td-srav NameSrav">Перезарядка:</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="SravResult">
+                <span id="WinWeapon">...</span>  - лидер в сравнении
+                <div class="TableSravScroll">
+                    <div id="ScrollTableBack" onclick="scrollBack()">&lt;</div>
+                    <div id="ScrollTableReset" onclick="resetScroll()">&asymp;</div>
+                    <div id="ScrollTableForward" onclick="scrollForward()">&gt;</div>
+                </div>
+            </div>
+        </div>
+        
+            
+
+        <div class="SearchSrav FWS" id="SearchSravnenie">
+                <div class="SettingName">
+                    Поиск по названию
+                </div>
+                <div class="SearchByNameZone">
+                    <div class="SearchConteiner">
+                        <input type="text" class="SearchInput" pattern=".{1,}" id="SearchInputSrav" placeholder="Введи название оружия" oninput="searchSrav(this)">
+                        <div class="ClearInputName" onclick="clearSearchInput2()">×</div>
+                    </div>
+                </div>
+                <div class="SearchResultZone">
+                    <div class="ResultCard RCSrav" id="SravResultSearch">
+                        
+                    </div>
+                </div>
+        
+            <!--div class="SearchSrav TWS">
+                <div class="ResultCard RCSrav">
+                    <div class="RCS_2">
+                        хуй
+                    </div>
+                </div>
+            </div>-->
+            <div class="SearchSravHide">
+                <div class="ButtonTopsSearch" onclick="HideBlockSrav()">
+                    Закрыть
+                </div>
+            </div>
+            
+        </div>
+
+    </article>
+
+
+
+
+    <!--Ноды для клонирования: Карточки, колонки и т.д-->
+    <div class="CloneNODE" hidden>
+
+        <!---->
+        <!--Карточка оружия-->
+        <div class="card" id="NodeToClone_MainCard">
+            <div class="first-content">
+                <img src="./assets/ItemIcons/" id="NTC_MC_image">
+            </div>
+            <div class="second-content">
+                <span id="NTC_MC_name">Тяжёлоукладчик (Не заряженный)</span>
+            </div>
+        </div>
+        
+        <!---->
+        <!--Строка результата поиска по имени-->
+        <div class="ResultRow" id="NodeToClone_rowResuldName">
+            <div class="NameRow" id="twrr_WeaponName">
+                Фамас
+            </div>
+            <div class="OtherLabelRow" >
+                <div class="TypeWeaponRR OLR_deco OLRD_FIRST" id="twrr_TypeWeapon">
+                    Автомат
+                </div>
+                <div class="OLR_deco OLR_img">
+                    <img src="./assets/EventImage/BADGE_SEASON2.png" id="twrr_Badge">
+                </div>
+                <div class="TypeWeaponRR OLR_deco OLRD_LAST" id="twrr_DamageType">
+                    Пули
+                </div>
+            </div>
+        </div>
+
+        <!---->
+        <!--Кнопка скина-->
+        <div class="SkinButtonAndPrev" id="NodeToClone_SkinButtonAndPrev">
+            <img src="./qq71.png">
+        </div>
+
+        <!---->
+        <!--ячейка в сравнении-->
+        <template id="NodeToClone_tableBit">
+            <td class="td-srav"></td>
+        </template>
+
+
+        <!---->
+        <!--Изображение в сравнении-->
+        <div class="ISWP_ImgZone" id="NodeToClone_ImageSrav">
+            <img src="">
+        </div>
+
+        <!---->
+        <!--Строка результата поиска по имени! В СРАВНЕНИИ!!-->
+        <div class="RCS_2" id="NodeToClone_rowResuldNameSrav">
+        </div>
+
+    </div>
+    
+    <script src="./WeaponsPage/Brain.js"></script>
+    <script src="./WeaponsPage/UI_Events.js"></script>
+
+
+    <aside class="CrossSettings">
+        <div class="CSPanels">
+            <div class="CSP_Group">
+                <div>Темы:</div>
+                <div onclick="changeTheme('Winter')" title="Нет, это не отсылка на Winter'a. Это время года.">
+                    Winter
+                </div>
+                <div onclick="changeTheme('8 марта')" title="Для Мегеры, выполняю обещание 😉">
+                    8 марта
+                </div>
+                <div onclick="changeTheme('Dracula')" >
+                    Dracula
+                </div>
+                <div onclick="changeTheme('Лето')">
+                    Лето
+                </div>
+                <div onclick="changeTheme('Классическая')" title="Так и не вышедшая версия справочника..😥">
+                    Классическая
+                </div>
+                <div onclick="changeTheme('Nuar')">
+                    Nuar
+                </div>
+                <div onclick="changeTheme('Discordo')" title="Сфоткай типо Дискорд📷">
+                    Discordo
+                </div>
+                <div onclick="changeTheme('RetroWave')" title="За основу взят 4 сезон блокады">
+                    RetroWave
+                </div>
+            </div>
+            <div class="CSP_Group">
+                <div>Сглаживание<br>картинок:</div>
+                <div class="checkbox-wrapper-8">
+                    <input type="checkbox" id="cb3-8" class="tgl tgl-skewed" onchange="saveSmoothingSetting(this)">
+                    <label for="cb3-8" data-tg-on="ON" data-tg-off="OFF" class="tgl-btn"></label>
+                </div>
+            </div>
+            <div class="CSP_Group">
+                <div>Размер<br>карточек:</div>
+                <div class="radio-input">
+                    <input name="radio" type="radio" class="input" onchange="setScale('1')" id="scaleOption1">
+                    <input name="radio" type="radio" class="input" onchange="setScale('2')" id="scaleOption2">
+                    <input name="radio" type="radio" class="input" onchange="setScale('3')" id="scaleOption3">
+                    <input name="radio" type="radio" class="input" onchange="setScale('4')" id="scaleOption4">
+                    <input name="radio" type="radio" class="input" onchange="setScale('5')" id="scaleOption5">
+                </div>
+            </div>
+            <div class="CSP_Group">
+                <div>Очистить<br>настройки:</div>
+                <div onclick="clearLocalStorageKeys()">
+                    »нажми«
+                </div>
+            </div>
+        </div>
+    </aside>
+    <script src="./CrossAssets/Thems/Thems.js"></script>
+</body>
+</html>
