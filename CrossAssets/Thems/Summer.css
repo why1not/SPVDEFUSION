@@ -1,0 +1,20 @@
+* {
+    --li: #2E2F2E;
+    --ba: #1e1e18;
+    --ak: #474a26;
+    --te: #ffffff;
+    --tr: rgba(255, 255, 255, 0);
+    --error: #F44236;
+
+    --back: #1e1e18 !important;
+    --dark-back: #131414 !important;
+    --border-black: #0c0c0c !important;
+    --row: #2E2F2E !important;
+    --lightBack: #474a26 !important;
+    /* --Text: #006E9A; */
+    --Text: #e2f6fe !important;
+    --blue: #a3c700 !important;
+    --whited: #e2f6fe !important;
+    --disabled_back: #0e0e0b !important;
+    scroll-behavior: smooth;
+}

@@ -1,0 +1,1323 @@
+@media (max-width: 767px) {
+    
+
+    .Window_One {
+        height: 100vh;
+        width: 100vw;
+        background-color: var(--ba);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+
+    }
+
+    .Window_Two {
+        min-height: 100vh;
+        width: 100vw;
+        background-color: var(--ba);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .Window_Tree {
+        min-height: 100vh;
+        width: 100vw;
+        background-color: var(--ba);
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .header {
+        width: 100%;
+        height: max-content;
+        min-height: 18vh;
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .LogoHead {
+        width: 100%;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+    }
+
+    .LogoHead p {
+        color: var(--te);
+        font-family: 'ss';
+        font-size: 4vh;
+        border-bottom: 2px solid var(--ak);
+    }
+
+    .HeadButtons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            align-content: center;
+            flex-wrap: wrap;
+            width: 95vw;
+            height: max-content;
+            overflow: hidden;
+            user-select: none;
+            gap: 5vw;
+            padding: 1vh 2.5vw;
+    }
+
+    .HeadButtons div {
+        border-radius: 100px;
+        box-shadow: 0px 0px 0px 2px var(--ak);
+        width: 28vw;
+        height: 4vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--te);
+        font-family: 'ss';
+        font-size: 2.7vh;
+    }
+
+
+
+
+
+
+
+
+    @keyframes shake {
+        0% {
+            transform: translateX(0);
+            box-shadow: 0px 0px 4px 2px var(--error);
+        }
+
+        25% {
+            transform: translateX(-1vw);
+            box-shadow: 0px 0px 4px 2px var(--error);
+        }
+
+        75% {
+            transform: translateX(1vw);
+            box-shadow: 0px 0px 4px 2px var(--error);
+        }
+
+        100% {
+            transform: translateX(0);
+            box-shadow: 0px 0px 4px 2px var(--error);
+        }
+    }
+
+    .shake-animation {
+        animation: shake 0.4s ease-in-out;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    aside {
+        width: 100%;
+        max-width: 100%;
+        height: max-content;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .SearchName {
+        margin: 2vh 0vh 0vh 0vw;
+        width: calc(100% - 2vw);
+        font-family: 'ss';
+        font-size: 5vh;
+        color: var(--te);
+        text-align: center;
+
+    }
+
+    .CardsZone {
+        flex: 1;
+        width: calc(100% - 4vh);
+        max-width: calc(100% - 4vh);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-content: flex-start;
+        align-items: flex-start;
+        height: min-content;
+        row-gap: 4vh;
+        margin: 1vh 2vh 0vh 2vh;
+        padding: 2vh 0vh 2vh 0vh;
+        overflow: auto;
+    }
+
+    .card {
+        width: 40vw;
+        height: 20vh;
+        background: var(--li);
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+        font-size: 30px;
+        font-family: 'ss';
+
+    }
+
+    .card:hover {
+        border-radius: 15px;
+        cursor: pointer;
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1);
+        -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
+        background: var(--ak);
+    }
+
+    .first-content {
+        height: 100%;
+        width: 100%;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        opacity: 1;
+        border-radius: 15px;
+    }
+
+    .first-content img {
+        width: 80%;
+    }
+
+    .card:hover .first-content {
+        height: 0px;
+        opacity: 0;
+    }
+
+    .second-content {
+        height: 0%;
+        width: 100%;
+        opacity: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border-radius: 15px;
+        -webkit-transition: all 0.4s;
+        transition: all 0.4s;
+        font-size: 0px;
+        -webkit-transform: rotate(90deg) scale(-1);
+        -ms-transform: rotate(90deg) scale(-1);
+        transform: rotate(90deg) scale(-1);
+        text-align: center;
+        word-break: break-word;
+        color: var(--te);
+    }
+
+    .card:hover .second-content {
+        opacity: 1;
+        height: 100%;
+        font-size: 3.5vh;
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+
+
+
+
+
+
+    .SettingName {
+        margin: 5vh 0vh 2vh 0vw;
+        width: 100%;
+        font-family: 'ss';
+        font-size: 4vh;
+        color: var(--te);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .SettingsZone::-webkit-scrollbar {
+        width: 1vh !important;
+    }
+
+    .SettingsZone::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    .SettingsZone::-webkit-scrollbar-thumb {
+        background-color: var(--ak);
+        border-radius: 100px
+    }
+
+    .SettingsZone {
+        width: 100%;
+        height: min-content;
+        display: flex;
+        overflow: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        max-height: 81vh;
+        margin-top: 2vh;
+    }
+
+    .SettingsZone2 {
+        width: 100%;
+        height: min-content;
+        display: flex;
+        overflow: auto;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 4vw;
+        max-height: 81vh;
+        margin-top: 2vh;
+    }
+
+    .SettingsZone3 {
+        width: 100vw;
+        max-width: 100vw;
+        height: min-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: center;
+        flex-wrap: nowrap;
+        gap: 4vw;
+        max-height: 81vh;
+        margin-top: 2vh;
+    }
+    .MainSettingSort {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        width: max-content;
+        height: min-content;
+        margin: 2vh 0vh;
+    }
+
+    .SortSatt {
+        border-radius: 100px;
+        border: 2px solid var(--ak);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--te);
+        font-family: 'ss';
+        font-size: 3vh;
+        position: relative;
+        width: 65vw;
+        height: 5vh;
+        min-height: 5vh;
+        margin: 1.5vh 0vh;
+        text-align: center;
+        user-select: none;
+    }
+
+    .GroupSort::after {
+        content: '';
+        position: absolute !important;
+        border-left: 1vh solid var(--te) !important;
+        border-bottom: 1vh solid var(--tr) !important;
+        transform: rotateZ(135deg) !important;
+        right: 1vw !important;
+        background-color: var(--tr) !important;
+        width: 0px;
+        height: 0px;
+        left: inherit !important;
+        top: unset !important;
+        bottom: unset !important;
+    }
+
+
+
+    .ButtonTopsSearch {
+            width: 78vw;
+            border: 3px solid var(--ak);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--te);
+            font-family: 'ss';
+            font-size: 3vh;
+            height: 5vh;
+            min-height: 5vh;
+            margin: 4.5vh 0vh;
+            user-select: none;
+
+    }
+
+    .SearchByNameZone {
+        margin: 5vh 0vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 10vh;
+    }
+
+    .SearchInput {
+        width: 55vw;
+        height: 6vh;
+        border-radius: 100px;
+        outline: none;
+        padding: 0vh 4vh 0vh 2vh;
+        border: none;
+    }
+
+    .SearchConteiner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ClearInputName {
+        z-index: 99;
+        position: absolute;
+        width: 0;
+        transform: translateX(24.5vw);
+        font-size: 4vh;
+        font-weight: 700;
+    }
+
+    .SearchResultZone {
+        width: 100%;
+        height: max-content;
+        max-height: 40vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .ResultCard {
+        height: max-content;
+        width: 96%;
+        max-height: 40vh;
+        background-color: var(--li);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        overflow: auto;
+        scroll-snap-type: y mandatory;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .ResultCard::-webkit-scrollbar {
+        width: 1vh !important;
+    }
+
+    .ResultCard::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    .ResultCard::-webkit-scrollbar-thumb {
+        background-color: var(--ak);
+        border-radius: 100px
+    }
+
+    .ResultRow {
+        width: 100%;
+        height: 5vh;
+        min-height: 5vh;
+        outline: 1px solid var(--ak);
+        scroll-snap-align: start;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .NameRow {
+        font-size: 2.5vh;
+        font-family: 'ss';
+        color: var(--te);
+        margin-left: 1vw;
+        max-width: 44%;
+        white-space: nowrap;
+        overflow: auto;
+    }
+
+    .OtherLabelRow {
+        height: 100%;
+        max-width: 55%;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .OLR_deco {
+        height: 70%;
+        max-height: 70%;
+        min-height: 70%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: center;
+        border-left: 1px solid var(--ak);
+        border-right: 1px solid var(--ak);
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .OLRD_FIRST {
+        border-left: 2px solid var(--ak) !important;
+    }
+
+    .OLRD_LAST {
+        border-right: 0px !important;
+    }
+
+    .OLR_deco img {
+        max-height: 100%;
+    }
+
+    .OLR_img {
+        width: 3vw;
+        max-width: 4vw;
+        padding: 0vh 1vw;
+        display: none;
+    }
+
+    .TypeWeaponRR {
+        font-family: 'ss';
+        font-size: 2.2vh;
+        color: var(--te);
+        max-width: 40%;
+        flex: 1;
+    }
+
+    .WeaponPrevZone {
+        display: flex;
+        width: 100%;
+        height: max-content;
+        min-height: 95vh;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .StatsWeaponZone {
+            width: 95%;
+            height: 65vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+    }
+
+    .SkinsZone {
+        width: max-content;
+        max-width: 50vw;
+        height: 21vh;
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        top: 60vh;
+        overflow: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+        border: 2px solid var(--ak);
+        border-radius: 6px;
+        scroll-snap-type: x mandatory;
+
+    }
+
+    .SkinButtonAndPrev {
+        height: 21vh;
+        width: 30vh;
+        min-width: 30vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        border-left: 1px solid var(--ak);
+        border-right: 1px solid var(--ak);
+        scroll-snap-align: start;
+    }
+
+    .SkinButtonAndPrev img {
+        width: 100% !important;
+
+    }
+
+    .SkinsZone .SkinButtonAndPrev:first-child {
+        border-left: none;
+    }
+
+    .SkinsZone .SkinButtonAndPrev:last-child {
+        border-right: none;
+    }
+
+    .SkinsZone::-webkit-scrollbar {
+        height: 1vh;
+    }
+
+    .ButtonToSkins {
+        position: sticky;
+        padding: 1vh;
+        background-color: var(--li);
+        border: 2px solid var(--ak);
+        border-radius: 100px;
+        color: var(--te);
+        font-size: 2.7vh;
+        font-family: 'ss';
+        display: grid;
+        place-items: center;
+        user-select: none;
+    }
+
+    .btsLeft {
+        right: calc(-1vh + calc(50vw - calc(5vh + 4px)));
+    }
+
+    .btsRight {
+        right: calc(1vh + calc(0vw + 2px));
+    }
+
+    .weapon-stat-card {
+        width: 85vw;
+        height: max-content;
+        min-height: 70%;
+        -webkit-perspective: 1000px;
+        perspective: 1000px;
+    }
+
+    .weapon-stat-card-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        -webkit-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transition: -webkit-transform 0.499s;
+        transition: -webkit-transform 0.499s;
+        transition: transform 0.499s;
+        transition: transform 0.499s,
+            -webkit-transform 0.499s;
+    }
+
+    .weapon-stat-card:hover .weapon-stat-card-inner {
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+    }
+
+    .weapon-stat-card-front,
+    .weapon-stat-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .weapon-stat-card-front {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border-radius: 10px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: space-between;
+        -webkit-transform: rotateY(0deg);
+        transform: rotateY(0deg);
+        flex-direction: column;
+        align-content: center;
+        color: var(--te);
+    }
+
+    .weapon-stat-card-back {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border-radius: 10px;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: space-between;
+        -webkit-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        flex-direction: column;
+        align-content: center;
+        color: var(--te);
+        overflow: auto;
+        scroll-snap-type: y mandatory;
+    }
+
+    .weapon-stat-card-back::-webkit-scrollbar {
+        width: 1vh;
+    }
+
+    .weapon-stat-card-back::-webkit-scrollbar-thumb {
+        background-color: var(--ak);
+    }
+
+    .WPC_Row {
+        
+        width: 94%;
+        height: 9vh;
+        min-height: 9vh;
+        scroll-snap-align: start;
+        overflow: hidden;
+    }
+
+    .WPCR_Name {
+        width: 100%;
+        height: 3vh;
+        text-align: left;
+        font-size: 2.7vh;
+        font-family: 'ss';
+    }
+
+    .WPCR_TTX {
+        display: flex;
+        width: 100%;
+        height: 6vh;
+        font-family: 'ss';
+        align-items: center;
+        justify-content: flex-start;
+        align-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        font-size: 4vh;
+        background: linear-gradient(90deg, var(--ak) 50%, var(--ba) 100%);
+        white-space: nowrap;
+    }
+
+    .WPCR_TTX p:first-child {
+        margin: 0% 30% 0% 8%;
+        width: 4vw;
+    }
+
+    .WeaponPrevIMGZone {
+        width: 95%;
+        height: 45vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .WPIZ_Area {
+        height: 80%;
+        width: 100%;
+        display: grid;
+        place-items: center;
+        background: var(--ba);
+        background: radial-gradient(circle, var(--li) 0%, var(--tr) 50%);
+    }
+
+    .WPIZ_Area img {
+        width: 80%;
+    }
+
+    .WPIZ_Buttons {
+        width: 100%;
+        height: max-content;
+        max-height: 20%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        user-select: none;
+    }
+
+    .WPIZ_Buttons div {
+        width: 20%;
+        height: 5vh;
+        border-radius: 100px;
+        border: 2px solid var(--ak);
+        display: grid;
+        place-items: center;
+        color: var(--te);
+        font-size: 3vh;
+        font-family: 'ss';
+    }
+
+    .TimeZone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        align-content: center;
+        flex-wrap: nowrap;
+        width: 100%;
+        height: max-content;
+        min-height: 100vh;
+    }
+
+    .TimeSettings {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: flex-start;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin: 4vh 0vh;
+    }
+
+
+
+    .inputBox {
+        position: relative;
+        width: 42vw;
+        padding: 2vh 1vw;
+        margin: 0vw 1vw;
+    }
+
+    .inputBox input,
+    select {
+        padding: 2vh 1vw;
+        outline: none;
+        background: transparent;
+        border-radius: 5px;
+        color: #e8e8e8;
+        border: 2px solid var(--ak);
+        font-size: 2.5vh;
+        width: 100%;
+        font-family: 'ss';
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    option {
+        color: black;
+        outline: none;
+        border: none;
+        appearance: none;
+    }
+
+    .inputBox span {
+        position: absolute;
+        left: 50%;
+        font-size: 0.7em;
+        transform: translateY(-7.5px) translateX(-50%);
+        transform-origin: center;
+        padding: 0 6px 1px 5px;
+        border-radius: 2px;
+        background: var(--ba);
+        font-family: 'ss';
+        letter-spacing: 1px;
+        border: 2px solid var(--ak);
+        color: #e8e8e8;
+        top: 2vh;
+        white-space: nowrap;
+    }
+
+    .TableTime {
+        width: 100%;
+        height: max-content;
+        flex: 1;
+        margin-bottom: 3vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .Thead {
+        width: 90%;
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        align-content: center;
+        background-color: var(--li);
+        margin-bottom: 2vh;
+        border-radius: 5px;
+    }
+
+    .Thead div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        width: 30%;
+        color: var(--te);
+        font-family: 'ss';
+        font-size: 3.1vh;
+        padding: 1vh 0vh;
+        text-align: center;
+    }
+
+    .weapon-time-table {
+        border-radius: 5px;
+        width: 90%;
+        height: 40%;
+        overflow: hidden;
+        text-align: center;
+        border-collapse: collapse;
+        background-color: var(--li);
+        border-top: 2px solid var(--ak);
+        border-bottom: 2px solid var(--ak);
+    }
+
+    .td-time {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        width: 30%;
+        text-align: center;
+        color: var(--te);
+        font-family: 'ss';
+        font-size: 3.1vh;
+        padding: 1vh 0vh;
+    }
+    .tr-time .td-time:first-child{
+        text-align: left !important;
+        justify-content: flex-start !important;
+        padding-left: 2vh;
+    }
+    .tr-time {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        justify-content: space-between;
+        align-content: center;
+        width: calc(100% + 4px);
+        border: 1px solid var(--ak);
+        position: relative;
+        left: -4px;
+    }
+
+    .weapon-time-table tbody .tr-time:first-child {
+        border-top: none;
+    }
+
+    .weapon-time-table tbody .tr-time:last-child {
+        border-bottom: none;
+    }
+
+
+
+
+
+
+
+    .Srav_Zone {
+        display: flex;
+        width: 100%;
+        height: max-content;
+        min-height: 95%;
+        overflow-x: auto;
+    }
+
+    .headerSrav {
+        width: 100%;
+        height: 5vh;
+        min-height: 5vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .HeadSravBack {
+        border-radius: 100px;
+        box-shadow: 0px 0px 0px 2px var(--ak);
+        width: 8vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--te);
+        font-family: 'ss';
+        height: calc(100% - 6px);
+        font-size: 2.7vh;
+        margin-left: 3vw;
+    }
+
+    .Srav_Zone {
+        width: 100%;
+        max-width: 100vw;
+        height: 95vh;
+        overflow: auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-content: center;
+    }
+
+    .Srav_Zone::-webkit-scrollbar {
+        height: 1vh;
+    }
+
+    .weapon-srav-table {
+        border-radius: 5px;
+        width: 100%;
+        height: 60%;
+        overflow: visible;
+        text-align: center;
+        border-collapse: collapse;
+        background-color: var(--li);
+        font-family: 'ss';
+        color: var(--te);
+        font-size: 3.5vh;
+
+    }
+
+    .SravWeapontPrev {
+        width: 100%;
+        height: 26vh;
+        display: flex;
+        /*overflow: auto;*/
+
+    }
+
+    .ISWP_zz {
+        width: calc(28vw - 3vw) !important;
+        padding-left: 3vw;
+        min-width: calc(28vw - 3vw) !important;
+    }
+
+    .ISWP_ImgZone {
+        height: 100%;
+        width: 18vw;
+        display: flex;
+        flex: 1;
+        min-width: 24vw;
+        justify-content: flex-start;
+        align-items: center;
+        transition: all .3s linear;
+        overflow: hidden;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .ISWP_ImgZone::after {
+        content: "Убрать";
+        color: var(--te);
+        font-size: 4vh;
+        height: 50%;
+        font-family: 'ss';
+        position: relative;
+        transform: rotateY(270deg);
+        perspective: 1000px;
+        transform: translateY(30vh);
+        transition: all .2s linear;
+    }
+
+    .ISWP_ImgZone:hover {
+        background-color: var(--error);
+    }
+
+    .ISWP_ImgZone:hover img {
+        transform: translateY(-30vh);
+    }
+
+    .ISWP_ImgZone:hover::after {
+        transform: rotateY(360deg);
+        transform: translateY(-13vh);
+    }
+
+    .ISWP_ImgZone img {
+        max-width: 100%;
+        max-height: 100%;
+        transition: all .2s linear;
+    }
+
+    .weapon-srav-table {
+        width: 100%;
+        max-width: 100%;
+        /*overflow: auto;*/
+        display: flex;
+    }
+
+    .tbody-srav {
+        display: flex;
+        width: max-content;
+        min-width: 100vw;
+        flex-direction: column;
+        border-collapse: collapse;
+        flex-direction: column;
+        border-collapse: collapse;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    .NameSrav {
+        width: calc(28vw - 3vw) !important;
+        max-width: calc(28vw - 3vw) !important;
+        min-width: calc(28vw - 3vw) !important;
+        justify-content: flex-start !important;
+        padding-left: 3vw;
+        border: none !important;
+    }
+
+    .tr-Srav {
+        display: flex;
+        width: max-content;
+        min-width: 100vw;
+        border-top: 1px solid var(--ak);
+        border-bottom: 1px solid var(--ak);
+        height: 9vh;
+        align-items: center;
+        background-color: var(--li);
+
+
+    }
+
+    .td-srav {
+        flex: 1;
+        min-width: calc(24vw - 2px);
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        border-left: 1px solid var(--ak);
+        border-right: 1px solid var(--ak);
+        height: 80%;
+    }
+
+    .tbody-srav .tr-Srav:first-child {
+        border-top: 2px solid var(--ak);
+    }
+
+    .tbody-srav .tr-Srav:last-child {
+        border-bottom: 2px solid var(--ak);
+    }
+
+    .tr-Srav .td-srav:nth-child(2) {
+        border-left: 2px solid var(--ak);
+    }
+
+    .tr-Srav .td-srav:last-child {
+        border-right: none !important;
+    }
+
+    .SravResult {
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        position: sticky;
+        min-height: 8vh;
+        flex: 1;
+        font-size: 4vh;
+        font-family: "ss";
+        color: var(--ak);
+        left: 0;
+    }
+
+    .ClearInputName {
+        display: none;
+    }
+
+    .SearchInput:not(:placeholder-shown)+.ClearInputName {
+        display: block !important;
+    }
+
+    .TableSravScroll {
+        position: absolute;
+        right: 3vw;
+        display: flex;
+        width: 9vw;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+        align-content: center;
+    }
+
+    .TableSravScroll div {
+        border-radius: 100px;
+        width: 5vh;
+        height: 5vh;
+        background-color: var(--ak);
+        color: var(--te);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        user-select: none;
+    }
+
+
+    .SearchSrav {
+        width: 50vw;
+        height: 100vh;
+        background-color: var(--li);
+        position: absolute;
+        top: 0;
+        transition: all 1s ease-in-out;
+        right: 0;
+
+    }
+
+    .SearchSravHide {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+
+    }
+
+    .FWS {
+        transform: translateX(50vw);
+    }
+
+    .RCSrav {
+        background-color: var(--ba) !important;
+    }
+
+    .RCSrav::-webkit-scrollbar-track {
+        background-color: var(--li) !important;
+    }
+
+    .RCS_2 {
+        display: flex;
+        width: 100%;
+        height: 4vh;
+        min-height: 5vh;
+        border: 1px solid var(--ak);
+        border-left: none;
+        border-right: none;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        scroll-snap-align: start;
+        color: var(--te);
+        font-size: 3.5vh;
+        font-family: 'ss';
+        overflow: hidden;
+    }
+
+    .RCSrav .RCS_2:first-child {
+        border-top: 2px solid var(--ak);
+    }
+
+    .RCSrav .RCS_2:last-child {
+        border-bottom: 2px solid var(--ak);
+    }
+
+    .HeadSravAddMore {
+        border-radius: 100px;
+        box-shadow: 0px 0px 0px 2px var(--ak);
+        width: max-content;
+        padding: 0vw 1vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--te);
+        font-family: 'ss';
+        height: calc(100% - 6px);
+        font-size: 2.7vh;
+        margin-left: 3vw;
+        border: none !important;
+        text-align: center;
+    }
+
+    .HeadSravAddMore {}
+
+    .buttonTops1 {
+        background-color: var(--ak);
+    }
+
+    .buttonTops2 {
+        background-color: var(--ak);
+    }
+
+    .buttonTops3 {
+        background-color: var(--ak);
+    }
+
+    .HeadButtons:hover,
+    .SortSatt:hover,
+    .ButtonTopsSearch:hover,
+    .WPIZ_Buttons div:hover,
+    select:hover,
+    .LogoHead:hover,
+    .ResultRow:hover {
+        cursor: pointer;
+    }
+
+
+}

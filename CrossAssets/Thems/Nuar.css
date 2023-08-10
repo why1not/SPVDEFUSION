@@ -1,0 +1,25 @@
+* {
+    --li: #161716;
+    --ba: #0e0c0a;
+    --ak: #2E2F2E;
+    --te: #adaead;
+    --tr: rgba(255, 255, 255, 0);
+    --error: rgb(47, 15, 15);
+}
+
+.HeadButtons div {
+    border-radius: 5px !important;
+}
+
+.inputBox input {
+    border-radius: 5px !important;
+}
+
+.WPCR_TTX,
+.SortSatt,
+.HeadSravAddMore,
+.HeadSravBack,
+.ResultCard {
+    border-radius: 5px !important;
+
+}

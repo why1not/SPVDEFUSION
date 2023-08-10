@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./CrossAssets/Thems/Winter.css" id="ThemsLink">
+    <link rel="stylesheet" href="./CrossAssets/main.css">
+    <link rel="stylesheet" href="./WeaponsPage/Desctop.css">
+    <link rel="stylesheet" href="./WeaponsPage/Mobile.css">
+    <link rel="stylesheet" href="./CrossAssets/Settings.css">
+    <link rel="stylesheet" href="./CrossAssets/SettingsMobile.css">
+    <link rel="stylesheet" href="./CrossAssets/Smooting/Smooth.css" id="SmoothinkLink">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <title>Справочник Gen II</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Справочник Defusion">
+    <meta name="application-name" content="Справочник Defusion">
+    <meta name="msapplication-TileColor" content="#050713">
+    <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    
+</head>
+<body>
+    <!--Сортировки, поиски и т.д-->
+    <article class="Window_One" >
+        <div class="header">
+            <a class="LogoHead" href="./index.html">
+                <p>Справочник</p>
+            </a>
+            <div class="HeadButtons">
+                <div onclick="openSearchByType(this)">Типы</div>
+                <!--<div onclick="openSearchByTop(this)">Топы</div>-->
+                <div onclick="openSearchByIvent(this)">Ивент</div>
+                <div class="btnSelected" onclick="openSearchByName(this)">Название</div>
+                <!--<div onclick="openSravnenie(this)" id="SravnenieOpennButton _Window_One">Сравнение</div>-->
+            </div>
+        </div>
+
+        <!--Стандартные карточки-->
+        <aside id="StandartCard" hidden>
+            <div class="SearchName" id="SearchNameLabel">
+                Соритровака по урону + Двойная броня
+            </div>
+            <div class="CardsZone" id="CardZoneMain">
+            </div>
+        </aside>
+
+        <!--Поиск по типу-->
+        <aside id="SearchByType" hidden>
+            <div class="SettingName">
+                Поиск по типу бонуса
+            </div>
+                <div class="SettingsZone"><div class="SortSatt" id="SortByTypeButton_Cold" onclick="filterWeaponsByResistBust('Выкл'); STNAME('Без бонусов')">
+                    Без бонусов
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_Cold" onclick="filterWeaponsByResistBust('Защита'); STNAME('Только защитные')">
+                    Только защитные
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_Rifle" onclick="filterWeaponsByResistBust('ДопУрон'); STNAME('Только с доп. уроном')">
+                    Только с доп. уроном
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_Automatic" onclick="filterWeaponsByResistBust('Блоки'); STNAME('Дополнительные блоки')">
+                    Дополнительные блоки
+                </div>
+                <div class="SortSatt" id="SortByTypeButton_MachineGun" onclick="filterWeaponsByResistBust('Комбо'); STNAME('Защита + Доп. Урон')">
+                    Защита + Доп. Урон
+                </div>
+
+
+            </div>
+        </aside>
+
+        <!--Поиск по ивенту-->
+        <aside id="SearchByIvent" hidden>
+            <div class="SettingName">
+                Поиск по ивенту\сезону\изданию
+            </div>
+            <div class="SettingsZone3">
+                <div class="MainSettingSort">
+                    <div onclick="openBattlePass(this);" class="SortSatt GroupSort">
+                        Battle-pass
+                    </div>
+                    <div  onclick="filterWeaponsByEdition('Новый год'); STNAME('Новый год')" class="SortSatt">
+                        Новый год
+                    </div>
+                    <div onclick="filterWeaponsByEdition('Хэллоуин'); STNAME('Хэллоуин')" class="SortSatt">
+                        Хэллоуин
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Обычный'); STNAME('Обычные')">
+                        Обычные
+                    </div>
+                </div>
+
+
+
+                <div class="MainSettingSort" hidden id="BattlePass">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Вторжение корпорации'); STNAME('Вторжение корпорации')">
+                        Вторжение корпорации
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Стимпанк'); STNAME('Стимпанк')">
+                        Стимпанк
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition('Буря в пустыне'); STNAME('Буря в пустыне')">
+                        Буря в пустыне
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+
+        <!--Поиск по названию-->
+        <aside id="SearchByName1">
+            <div class="SettingName">
+                Поиск по названию
+            </div>
+            <div class="SearchByNameZone">
+                <div class="SearchConteiner">
+                    <input type="text" class="SearchInput" pattern=".{1,}" placeholder="Введи название скина.." oninput="search(this)">
+                    <div class="ClearInputName" onclick="clearSearchInput()">×</div>
+                </div>
+            </div>
+            <div class="SearchResultZone">
+                <div class="ResultCard" id="ResuldCardByName">
+                   
+                </div>
+            </div>
+        </aside>
+    </article>
+    
+    <!--Просмотр Оружия-->
+    <article class="Window_Two" hidden>
+        <div class="header">
+            <div class="LogoHead">
+                <p id='logoandback' onclick="BackToOne()">Справочник</p>
+            </div>
+            <div class="HeadButtons">
+                <!--<div onclick="openSravnenie(this)"  id="SravnenieOpennButton _Window_Two" class="AddWpToSravIN">Сравнить</div>-->
+                <div id="ShareButton" onclick="getShareLink(this)">Поделиться</div>
+            </div>
+        </div>
+        <div class="WeaponPrevZone">
+            <div class="StatsWeaponZone">
+                <div class="weapon-stat-card">
+                    <div class="weapon-stat-card-inner">
+                        <div class="weapon-stat-card-front">
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Название
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_Name"></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Серия
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_series"></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Тип получения
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_typeclaim"></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Цена
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_price"></p>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="weapon-stat-card-back">
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name" id="labelResitBust">
+                                    Защитные свойства
+                                </div>
+                                <div class="WPCR_TTX">
+                                    <p id="WPView_resisi"></p>
+                                </div>
+                            </div>
+                            <div class="WPC_Row">
+                                <div class="WPCR_Name">
+                                    Буст оружия
+                                </div>
+                                <div class="WPCR_TTX" id="labelWpBust">
+                                    <p id="WPView_otherbust"></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="WeaponPrevIMGZone">
+                <div class="WPIZ_Area">
+                    <img src="./qq71.png" id="WPView_Image">
+                    <div class="SkinsZone containerskins" hidden id="containerSkinwWpis">
+                        <!--
+                                            <div class="SkinButtonAndPrev">
+                                                <img src="./qq71.png">
+                                            </div>
+                                            -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+   
+
+
+    <!--Ноды для клонирования: Карточки, колонки и т.д-->
+    <div class="CloneNODE" hidden>
+
+        <!---->
+        <!--Карточка оружия-->
+        <div class="card" id="NodeToClone_MainCard">
+            <div class="first-content">
+                <img src="./assets/ItemIcons/" id="NTC_MC_image">
+            </div>
+            <div class="second-content">
+                <span id="NTC_MC_name">Тяжёлоукладчик (Не заряженный)</span>
+            </div>
+        </div>
+        
+        <!---->
+        <!--Строка результата поиска по имени-->
+        <div class="ResultRow" id="NodeToClone_rowResuldName">
+            <div class="NameRow" id="twrr_WeaponName">
+                Фамас
+            </div>
+            <div class="OtherLabelRow" >
+                <div class="TypeWeaponRR OLR_deco OLRD_FIRST" id="twrr_TypeWeapon">
+                    Автомат
+                </div>
+                <div class="OLR_deco OLR_img">
+                    <img src="./assets/EventImage/BADGE_SEASON2.png" id="twrr_Badge">
+                </div>
+                <div class="TypeWeaponRR OLR_deco OLRD_LAST" id="twrr_DamageType">
+                    Пули
+                </div>
+            </div>
+        </div>
+
+        <!---->
+        <!--Кнопка скина-->
+        <div class="SkinButtonAndPrev" id="NodeToClone_SkinButtonAndPrev">
+            <img src="./qq71.png">
+        </div>
+
+        <!---->
+        <!--ячейка в сравнении-->
+        <template id="NodeToClone_tableBit">
+            <td class="td-srav"></td>
+        </template>
+
+
+        <!---->
+        <!--Изображение в сравнении-->
+        <div class="ISWP_ImgZone" id="NodeToClone_ImageSrav">
+            <img src="">
+        </div>
+
+        <!---->
+        <!--Строка результата поиска по имени! В СРАВНЕНИИ!!-->
+        <div class="RCS_2" id="NodeToClone_rowResuldNameSrav">
+        </div>
+
+    </div>
+    
+    <script src="./SkinsPage/Brain.js"></script>
+    <script src="./SkinsPage/UI_Events.js"></script>
+
+
+    <aside class="CrossSettings">
+        <div class="CSPanels">
+            <div class="CSP_Group">
+                <div>Темы:</div>
+                <div onclick="changeTheme('Winter')" title="Нет, это не отсылка на Winter'a. Это время года.">
+                    Winter
+                </div>
+                <div onclick="changeTheme('8 марта')" title="Для Мегеры, выполняю обещание 😉">
+                    8 марта
+                </div>
+                <div onclick="changeTheme('Dracula')" >
+                    Dracula
+                </div>
+                <div onclick="changeTheme('Лето')">
+                    Лето
+                </div>
+                <div onclick="changeTheme('Классическая')" title="Так и не вышедшая версия справочника..😥">
+                    Классическая
+                </div>
+                <div onclick="changeTheme('Nuar')">
+                    Nuar
+                </div>
+                <div onclick="changeTheme('Discordo')" title="Сфоткай типо Дискорд📷">
+                    Discordo
+                </div>
+                <div onclick="changeTheme('RetroWave')" title="За основу взят 4 сезон блокады">
+                    RetroWave
+                </div>
+                <div onclick="changeTheme('Trifolium')" title="За основу взят 4 сезон блокады">
+                    Trifolium 
+                </div>
+                <div onclick="changeTheme('Harun')" title="За основу взят 4 сезон блокады">
+                    Harun
+                </div>
+            </div>
+            <div class="CSP_Group">
+                <div>Сглаживание<br>картинок:</div>
+                <div class="checkbox-wrapper-8">
+                    <input type="checkbox" id="cb3-8" class="tgl tgl-skewed" onchange="saveSmoothingSetting(this)">
+                    <label for="cb3-8" data-tg-on="ON" data-tg-off="OFF" class="tgl-btn"></label>
+                </div>
+            </div>
+            <div class="CSP_Group">
+                <div>Размер<br>карточек:</div>
+                <div class="radio-input">
+                    <input name="radio" type="radio" class="input" onchange="setScale('1')" id="scaleOption1">
+                    <input name="radio" type="radio" class="input" onchange="setScale('2')" id="scaleOption2">
+                    <input name="radio" type="radio" class="input" onchange="setScale('3')" id="scaleOption3">
+                    <input name="radio" type="radio" class="input" onchange="setScale('4')" id="scaleOption4">
+                    <input name="radio" type="radio" class="input" onchange="setScale('5')" id="scaleOption5">
+                </div>
+            </div>
+            <div class="CSP_Group">
+                <div>Очистить<br>настройки:</div>
+                <div onclick="clearLocalStorageKeys()">
+                    »нажми«
+                </div>
+            </div>
+        </div>
+    </aside>
+    <script src="./CrossAssets/Thems/Thems.js"></script>
+</body>
+</html>

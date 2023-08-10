@@ -7,25 +7,51 @@
     <link rel="stylesheet" href="./CrossAssets/Thems/Winter.css" id="ThemsLink">
     <link rel="stylesheet" href="./CrossAssets/main.css">
     <link rel="stylesheet" href="./WeaponsPage/Desctop.css">
+    <link rel="stylesheet" href="./WeaponsPage/Mobile.css">
     <link rel="stylesheet" href="./CrossAssets/Settings.css">
+    <link rel="stylesheet" href="./CrossAssets/SettingsMobile.css">
     <link rel="stylesheet" href="./CrossAssets/Smooting/Smooth.css" id="SmoothinkLink">
 
-    <title>Document</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <title>Справочник Gen II</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Справочник Defusion">
+    <meta name="application-name" content="Справочник Defusion">
+    <meta name="msapplication-TileColor" content="#050713">
+    <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    
 </head>
 <body>
     <!--Сортировки, поиски и т.д-->
     <article class="Window_One" >
         <div class="header">
-            <div class="LogoHead">
+            <a class="LogoHead" href="./index.html">
                 <p>Справочник</p>
-            </div>
+            </a>
             <div class="HeadButtons">
                 <div onclick="openSearchByType(this)">Типы</div>
                 <div onclick="openSearchByTop(this)">Топы</div>
                 <div onclick="openSearchByIvent(this)">Ивент</div>
                 <div class="btnSelected" onclick="openSearchByName(this)">Название</div>
-                <div onclick="openSravnenie(this)" id="SravnenieOpennButton _Window_One">Сравнение</div>
+                <!--<div onclick="openSravnenie(this)" id="SravnenieOpennButton _Window_One">Сравнение</div>-->
             </div>
         </div>
 
@@ -86,7 +112,7 @@
         <!--Поиск по ивенту-->
         <aside id="SearchByIvent" hidden>
             <div class="SettingName">
-                Поиск по ивенту\сезону\изданию
+                Поиск по ивенту\изданию
             </div>
             <div class="SettingsZone3">
                 <div class="MainSettingSort">
@@ -99,34 +125,34 @@
                     <div onclick="openHellowen(this)" class="SortSatt GroupSort">
                         Хэллоуин
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Zombie Издание')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Zombie Издание')">
                         Zombie Издание
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Snow')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Snow')">
                         Snow-издание
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Милитари 1945')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Милитари 1945')">
                         Милитари-1945
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Галовечеринка')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Галовечеринка')">
                         Гало-вечеринка
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Anarchy')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Anarchy')">
                         Анархия
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEd_Combo('Desert')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Desert')">
                         Desert издание
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEd_Combo('Lady')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Lady')">
                         Леди издание
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Color Delusion')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Color Delusion')">
                         Color Delusion
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Rusted')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Rusted')">
                         Rusted
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Starline')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Starline')">
                         Starline
                     </div>
                 </div>
@@ -140,26 +166,29 @@
                     <div class="SortSatt" onclick="filterWeaponsByEdition2('2 Сезон')">
                         Стимпанк
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('3 сезон')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('3 сезон')">
                         Буря в пустыне
+                    </div>
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Retro')">
+                        Retro
                     </div>
                 </div>
                 <div class="MainSettingSort" hidden id="NewYear">
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('New Year')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('New Year')">
                         New Year
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Christmas')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Christmas')">
                         Christmas
                     </div>
                 </div>
                 <div class="MainSettingSort" hidden id="Hellowen">
-                    <div class="SortSatt" onclick="filterWeaponsByEd_Combo('Cursed Bones')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Cursed Bones')">
                         Cursed Bones
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Кровавая ночь')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Кровавая ночь')">
                         Кровавая ночь
                     </div>
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Жуткий Хэллоуин')">
+                    <div class="SortSatt" onclick="filterWeaponsByEdition2('Жуткий Хэллоуин')">
                         Жуткий Хеллоуин
                     </div>
                 </div>
@@ -193,6 +222,12 @@
                     <div class="SortSatt" onclick="handleButtonClick3(this, 'Без брони')">Без брони</div>
                     <div class="SortSatt" onclick="handleButtonClick3(this, 'Обычная броня')">Обычная броня</div>
                     <div class="SortSatt" onclick="handleButtonClick3(this, 'Укреплённая броня')">Укреплённая броня</div>
+                    
+                </div>
+            
+                <div class="MainSettingSort">
+                    <div class="SortSatt" onclick="handleButtonClick4(this, 'Тело')">Тело</div>
+                    <div class="SortSatt" onclick="handleButtonClick4(this, 'Голова')">Голова</div>
                     <div class="ButtonTopsSearch" onclick="sortAndPrintStockTimeNoArmor()">Рассчитать топ</div>
                 </div>
             </div>
@@ -241,8 +276,8 @@
                 <p id='logoandback' onclick="BackToOne()">Справочник</p>
             </div>
             <div class="HeadButtons">
-                <div onclick="openSravnenie(this)"  id="SravnenieOpennButton _Window_Two" class="AddWpToSravIN">Сравнить</div>
-                <div>Поделиться</div>
+                <!--<div onclick="openSravnenie(this)"  id="SravnenieOpennButton _Window_Two" class="AddWpToSravIN">Сравнить</div>-->
+                <div id="ShareButton" onclick="getShareLink(this)">Поделиться</div>
             </div>
         </div>
         <div class="WeaponPrevZone">
@@ -395,7 +430,7 @@
             </div>
             <div class="WeaponPrevIMGZone">
                 <div class="WPIZ_Area">
-                    <img src="./qq71.png" id="WPView_Image">
+                    <img src="" id="WPView_Image">
                     <div class="SkinsZone containerskins" hidden id="containerSkinwWpis">
                         <!--
                                             <div class="SkinButtonAndPrev">
@@ -406,7 +441,7 @@
                     </div>
                 </div>
                 <div class="WPIZ_Buttons">
-                    <div id="buttonSkinsWpis" onclick="OpenSkinsZone()">Скины</div>
+                    <!--<div id="buttonSkinsWpis" onclick="OpenSkinsZone()">Скины</div>-->
                 </div>
             </div>
         </div>
@@ -500,7 +535,7 @@
     </article>
 
     <!--Режим сравнения-->
-    <article class="Window_Tree" hidden>
+    <!--<article class="Window_Tree" hidden>
         <div class="headerSrav">
             <div class="HeadSravBack" onclick="findSravnenieElement();">Назад</div>
             <div class="HeadSravAddMore" onclick="showBlockSrav()">Добавить к сравнению</div>
@@ -508,21 +543,21 @@
                 <option value="Сток">Сток</option>
                 <option value="Фулл" selected>Фулл</option>
             </select>
-            <select class="HeadSravAddMore">
-                <!--<option value="Тело" disabled>Тело</option>-->
-                <option value="Голова" selected>Голова</option>
+            <select class="HeadSravAddMore" id="PlayerHP">
+                
+                <option value="100" selected>Без брони</option>
+                <option value="125">Обычная</option>
+                <option value="150">Укреплённая</option>
             </select>
+            <div class="HeadSravAddMore" onclick="MoreinfoSrav(this);" jote="FEUS">Подробно</div>
         </div>
         <div class="Srav_Zone" >
             <div class="SravWeapontPrev">
                 <div class="ISWP_zz"></div>
-                <!--
-                <div class="ISWP_ImgZone">
-                    <img src="./qq71.png">
-                </div>
-                -->
             </div>
-            <table class="weapon-srav-table">
+
+
+            <table class="weapon-srav-table" id="TablleTTX">
                 <tbody class="tbody-srav" id="TableStok" hidden>
                     <tr class="tr-Srav tr-Srav_Stok">
                         <td class="td-srav NameSrav">Урон:</td>
@@ -543,7 +578,7 @@
                         <td class="td-srav NameSrav">Перезарядка:</td>
                     </tr>
                 </tbody>
-                <tbody class="tbody-srav" id="TableFull">
+                <tbody class="tbody-srav" id="TableFull" >
                     <tr class="tr-Srav tr-Srav_Full">
                         <td class="td-srav NameSrav">Урон фулл:</td>
                     </tr>
@@ -564,6 +599,61 @@
                     </tr>
                 </tbody>
             </table>
+            <table class="weapon-srav-table" id="TableTime" hidden>
+                <tbody class="tbody-srav" id="TableTimeStock" hidden>
+                    <tr class="tr-Srav tr-Srav_TimeSt">
+                        <td class="td-srav NameSrav">Голова:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeSt">
+                        <td class="td-srav NameSrav">Тело:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeSt">
+                        <td class="td-srav NameSrav">Плечо:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeSt">
+                        <td class="td-srav NameSrav">Предплечье:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeSt">
+                        <td class="td-srav NameSrav">Кисть:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeSt">
+                        <td class="td-srav NameSrav">Бедро:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeSt">
+                        <td class="td-srav NameSrav">Голень:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeSt">
+                        <td class="td-srav NameSrav">Ступня:</td>
+                    </tr>
+                </tbody>
+                <tbody class="tbody-srav" id="TableTimeFull">
+                    <tr class="tr-Srav tr-Srav_TimeFull">
+                        <td class="td-srav NameSrav">Голова:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeFull">
+                        <td class="td-srav NameSrav">Тело:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeFull">
+                        <td class="td-srav NameSrav">Плечо:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeFull">
+                        <td class="td-srav NameSrav">Предплечье:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeFull">
+                        <td class="td-srav NameSrav">Кисть:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeFull">
+                        <td class="td-srav NameSrav">Бедро:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeFull">
+                        <td class="td-srav NameSrav">Голень:</td>
+                    </tr>
+                    <tr class="tr-Srav tr-Srav_TimeFull">
+                        <td class="td-srav NameSrav">Ступня:</td>
+                    </tr>
+                </tbody>
+            </table>
+
             <div class="SravResult">
                 <span id="WinWeapon">...</span>  - лидер в сравнении
                 <div class="TableSravScroll">
@@ -574,6 +664,13 @@
             </div>
         </div>
         
+            
+            
+            
+            
+            
+            
+            
             
 
         <div class="SearchSrav FWS" id="SearchSravnenie">
@@ -592,13 +689,6 @@
                     </div>
                 </div>
         
-            <!--div class="SearchSrav TWS">
-                <div class="ResultCard RCSrav">
-                    <div class="RCS_2">
-                        хуй
-                    </div>
-                </div>
-            </div>-->
             <div class="SearchSravHide">
                 <div class="ButtonTopsSearch" onclick="HideBlockSrav()">
                     Закрыть
@@ -607,7 +697,7 @@
             
         </div>
 
-    </article>
+    </article>-->
 
 
 
@@ -703,6 +793,12 @@
                 <div onclick="changeTheme('RetroWave')" title="За основу взят 4 сезон блокады">
                     RetroWave
                 </div>
+                <div onclick="changeTheme('Trifolium')" title="За основу взят 4 сезон блокады">
+                    Trifolium 
+                </div>
+                <div onclick="changeTheme('Harun')" title="За основу взят 4 сезон блокады">
+                    Harun
+                </div>
             </div>
             <div class="CSP_Group">
                 <div>Сглаживание<br>картинок:</div>
@@ -730,5 +826,6 @@
         </div>
     </aside>
     <script src="./CrossAssets/Thems/Thems.js"></script>
+
 </body>
 </html>
