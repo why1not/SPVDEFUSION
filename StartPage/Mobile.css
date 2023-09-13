@@ -2,7 +2,6 @@
     body {
         background-color: var(--ba);
     }
-
     article {
         height: 100vh;
         width: 100vw;
@@ -11,15 +10,12 @@
         flex-direction: column;
         flex-wrap: nowrap;
         align-items: center;
-
     }
-
     .header {
         width: 100%;
         height: 5%;
         background-color: var(--li);
     }
-
     .logo {
         height: 25%;
         width: 100%;
@@ -33,13 +29,11 @@
         font-family: 'ss';
         font-size: 9vh;
     }
-
     .logo span {
         font-size: 3vh;
         height: 0vh;
         color: var(--li);
     }
-
     .CardZone {
         width: 100%;
         height: 60vh;
@@ -54,7 +48,6 @@
         align-items: center;
         gap: 5vw;
     }
-
     .HelloCard {
         width: max-content;
         min-width: 40vw;
@@ -68,7 +61,6 @@
         flex-wrap: nowrap;
         text-decoration: none;
     }
-
     .MainRect {
         width: 40vw;
         height: 21vh;
@@ -85,12 +77,10 @@
         flex-direction: row;
         user-select: none;
     }
-
     .RectADDText {
         z-index: 10;
         user-select: none;
     }
-
     .RowBackText {
         color: var(--ba);
         font-size: 3vh;
@@ -104,10 +94,7 @@
         flex-direction: row;
         align-items: center;
         align-content: center;
-
-
     }
-
     .NameC {
         color: var(--ba);
         font-size: 3vh;
@@ -117,64 +104,48 @@
         transition: all .1s ease-in;
         z-index: 50;
     }
-
     .MainRect::after {
         content: '';
-
         position: absolute;
         left: 0;
         top: 0;
-
         border-top: 6vw solid var(--ba);
         border-right: 6vw solid var(--tr);
         transition: all .1s ease-in;
         z-index: 55;
     }
-
     .MainRect::before {
         content: '';
-
         position: absolute;
         right: 0;
         bottom: 0;
-
         border-bottom: 6vw solid var(--ba);
         border-left: 6vw solid var(--tr);
         transform: rotate(0deg);
         transition: all .1s ease-in;
         z-index: 55;
     }
-
-
     .HelloCard:hover .MainRect {
         box-shadow: 0px 0px 0px 2px var(--ak) inset;
     }
-
     .HelloCard:hover .MainRect::before {
         border-bottom: 0vw solid var(--ba);
         border-left: 0vw solid var(--li);
     }
-
     .HelloCard:hover .MainRect::after {
         border-top: 0vw solid var(--ba);
         border-right: 0vw solid var(--li);
     }
-
     .MainRect:hover .RectADDText {}
-
     .MainRect:hover .RectADDText .NameC {
         color: var(--ak);
         font-size: 5vh;
         transform: rotate(0deg) !important;
     }
-
     .HelloCard:hover .MainRect .RectADDText .RowBackText {
-
         margin: 0vh 0vh;
         color: var(--li);
         font-size: 0vh;
         transform: rotate(0deg) !important;
     }
-
-
 }

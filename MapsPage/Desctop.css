@@ -6,9 +6,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: center;
-
 }
-
 .Window_Two {
     min-height: 100vh;
     width: 100vw;
@@ -18,7 +16,6 @@
     flex-wrap: nowrap;
     align-items: center;
 }
-
 .Window_Tree {
     min-height: 100vh;
     width: 100vw;
@@ -28,7 +25,6 @@
     flex-wrap: nowrap;
     align-items: center;
 }
-
 .header {
     width: 100%;
     height: 5vh;
@@ -36,7 +32,6 @@
     display: flex;
     flex-direction: row;
 }
-
 .LogoHead {
     width: 40%;
     height: 100%;
@@ -47,7 +42,6 @@
     flex-wrap: nowrap;
     flex-direction: row;
 }
-
 .LogoHead p {
     margin: 0 0 0 2vw;
     color: var(--te);
@@ -55,7 +49,6 @@
     font-size: 4vh;
     border-bottom: 2px solid var(--ak);
 }
-
 .HeadButtons {
     display: flex;
     flex-direction: row;
@@ -67,7 +60,6 @@
     overflow: hidden;
     user-select: none;
 }
-
 .HeadButtons div {
     border-radius: 100px;
     box-shadow: 0px 0px 0px 2px var(--ak);
@@ -80,51 +72,27 @@
     height: calc(100% - 6px);
     font-size: 2.7vh;
 }
-
-
-
-
-
-
-
-
 @keyframes shake {
     0% {
         transform: translateX(0);
         box-shadow: 0px 0px 4px 2px var(--error);
     }
-
     25% {
         transform: translateX(-1vw);
         box-shadow: 0px 0px 4px 2px var(--error);
     }
-
     75% {
         transform: translateX(1vw);
         box-shadow: 0px 0px 4px 2px var(--error);
     }
-
     100% {
         transform: translateX(0);
         box-shadow: 0px 0px 4px 2px var(--error);
     }
 }
-
 .shake-animation {
     animation: shake 0.4s ease-in-out;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 aside {
     width: 100%;
     max-width: 100%;
@@ -137,16 +105,13 @@ aside {
     align-content: center;
     flex-wrap: nowrap;
 }
-
 .SearchName {
     margin: 5vh 0vh 2vh 2vw;
     width: calc(100% - 2vw);
     font-family: 'ss';
     font-size: 5vh;
     color: var(--te);
-
 }
-
 .CardsZone {
     flex: 1;
     width: calc(100% - 4vh);
@@ -163,7 +128,6 @@ aside {
     padding: 2vh 0vh 2vh 0vh;
     overflow: auto;
 }
-
 .card {
     width: 17vw;
     height: 27vh;
@@ -175,9 +139,7 @@ aside {
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
     font-size: 30px;
     font-family: 'ss';
-
 }
-
 .card:hover {
     border-radius: 15px;
     cursor: pointer;
@@ -188,7 +150,6 @@ aside {
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.705);
     background: var(--ak);
 }
-
 .first-content {
     height: 100%;
     width: 100%;
@@ -206,16 +167,13 @@ aside {
     opacity: 1;
     border-radius: 15px;
 }
-
 .first-content img {
     width: 80%;
 }
-
 .card:hover .first-content {
     height: 0px;
     opacity: 0;
 }
-
 .second-content {
     height: 0%;
     width: 100%;
@@ -240,7 +198,6 @@ aside {
     word-break: break-word;
     color: var(--te);
 }
-
 .card:hover .second-content {
     opacity: 1;
     height: 100%;
@@ -249,13 +206,6 @@ aside {
     -ms-transform: rotate(0deg);
     transform: rotate(0deg);
 }
-
-
-
-
-
-
-
 .SettingName {
     margin: 5vh 0vh 2vh 0vw;
     width: 100%;
@@ -266,20 +216,16 @@ aside {
     align-items: center;
     justify-content: center;
 }
-
 .SettingsZone::-webkit-scrollbar {
     width: 1vh !important;
 }
-
 .SettingsZone::-webkit-scrollbar-track {
     background: none;
 }
-
 .SettingsZone::-webkit-scrollbar-thumb {
     background-color: var(--ak);
     border-radius: 100px
 }
-
 .SettingsZone {
     width: 100%;
     height: min-content;
@@ -293,7 +239,6 @@ aside {
     height: 81vh;
     margin-top: 2vh;
 }
-
 .SettingsZone2 {
     width: 100%;
     height: min-content;
@@ -308,7 +253,6 @@ aside {
     height: 81vh;
     margin-top: 2vh;
 }
-
 .SettingsZone3 {
     width: 100%;
     height: min-content;
@@ -323,7 +267,6 @@ aside {
     height: 81vh;
     margin-top: 2vh;
 }
-
 .MainSettingSort {
     max-width: 25vw;
     display: flex;
@@ -336,7 +279,6 @@ aside {
     height: max-content;
     overflow: hidden;
 }
-
 .SortSatt {
     border-radius: 100px;
     border: 2px solid var(--ak);
@@ -354,7 +296,6 @@ aside {
     text-align: center;
     user-select: none;
 }
-
 .GroupSort::after {
     content: '';
     position: absolute !important;
@@ -369,9 +310,6 @@ aside {
     top: unset !important;
     bottom: unset !important;
 }
-
-
-
 .ButtonTopsSearch {
     position: absolute;
     bottom: 0;
@@ -387,9 +325,7 @@ aside {
     min-height: 5vh;
     margin: 1.5vh 0vh;
     user-select: none;
-
 }
-
 .SearchByNameZone {
     margin: 5vh 0vh;
     width: 100%;
@@ -398,7 +334,6 @@ aside {
     justify-content: center;
     height: 30vh;
 }
-
 .SearchInput {
     width: 20vw;
     height: 5vh;
@@ -407,13 +342,11 @@ aside {
     padding: 0vh 4vh 0vh 2vh;
     border: none;
 }
-
 .SearchConteiner {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 .ClearInputName {
     z-index: 99;
     position: absolute;
@@ -422,7 +355,6 @@ aside {
     font-size: 4vh;
     font-weight: 700;
 }
-
 .SearchResultZone {
     width: 100%;
     height: max-content;
@@ -431,7 +363,6 @@ aside {
     justify-content: center;
     align-items: flex-start;
 }
-
 .ResultCard {
     height: max-content;
     width: 60%;
@@ -446,20 +377,16 @@ aside {
     align-content: center;
     flex-wrap: nowrap;
 }
-
 .ResultCard::-webkit-scrollbar {
     width: 1vh !important;
 }
-
 .ResultCard::-webkit-scrollbar-track {
     background: none;
 }
-
 .ResultCard::-webkit-scrollbar-thumb {
     background-color: var(--ak);
     border-radius: 100px
 }
-
 .ResultRow {
     width: 100%;
     height: 5vh;
@@ -471,14 +398,12 @@ aside {
     flex-direction: row;
     justify-content: space-between;
 }
-
 .NameRow {
     font-size: 3vh;
     font-family: 'ss';
     color: var(--te);
     margin-left: 1vw;
 }
-
 .OtherLabelRow {
     height: 100%;
     max-width: 50%;
@@ -490,7 +415,6 @@ aside {
     align-content: center;
     flex-wrap: nowrap;
 }
-
 .OLR_deco {
     height: 70%;
     max-height: 70%;
@@ -505,25 +429,20 @@ aside {
     white-space: nowrap;
     overflow: hidden;
 }
-
 .OLRD_FIRST {
     border-left: 2px solid var(--ak) !important;
 }
-
 .OLRD_LAST {
     border-right: 0px !important;
 }
-
 .OLR_deco img {
     max-height: 100%;
 }
-
 .OLR_img {
     width: 2vw;
     max-width: 4vw;
     padding: 0vh 1vw;
 }
-
 .TypeWeaponRR {
     font-family: 'ss';
     font-size: 3vh;
@@ -531,14 +450,12 @@ aside {
     max-width: 40%;
     flex: 1;
 }
-
 .WeaponPrevZone {
     display: flex;
     width: 100%;
     height: max-content;
     min-height: 95vh;
 }
-
 .StatsWeaponZone {
     width: 50%;
     height: 95vh;
@@ -547,7 +464,6 @@ aside {
     justify-content: center;
     flex-direction: column;
 }
-
 .SkinsZone {
     width: max-content;
     max-width: 50vw;
@@ -564,9 +480,7 @@ aside {
     border: 2px solid var(--ak);
     border-radius: 6px;
     scroll-snap-type: x mandatory;
-
 }
-
 .SkinButtonAndPrev {
     height: 21vh;
     width: 30vh;
@@ -581,24 +495,18 @@ aside {
     border-right: 1px solid var(--ak);
     scroll-snap-align: start;
 }
-
 .SkinButtonAndPrev img {
     width: 100% !important;
-
 }
-
 .SkinsZone .SkinButtonAndPrev:first-child {
     border-left: none;
 }
-
 .SkinsZone .SkinButtonAndPrev:last-child {
     border-right: none;
 }
-
 .SkinsZone::-webkit-scrollbar {
     height: 1vh;
 }
-
 .ButtonToSkins {
     position: sticky;
     padding: 1vh;
@@ -612,15 +520,12 @@ aside {
     place-items: center;
     user-select: none;
 }
-
 .btsLeft {
     right: calc(-1vh + calc(50vw - calc(5vh + 4px)));
 }
-
 .btsRight {
     right: calc(1vh + calc(0vw + 2px));
 }
-
 .weapon-stat-card {
     width: 35vw;
     height: max-content;
@@ -628,7 +533,6 @@ aside {
     -webkit-perspective: 1000px;
     perspective: 1000px;
 }
-
 .weapon-stat-card-inner {
     width: 100%;
     height: 100%;
@@ -641,12 +545,10 @@ aside {
     transition: transform 0.499s,
         -webkit-transform 0.499s;
 }
-
 .weapon-stat-card:hover .weapon-stat-card-inner {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
 }
-
 .weapon-stat-card-front,
 .weapon-stat-card-back {
     position: absolute;
@@ -655,7 +557,6 @@ aside {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-
 .weapon-stat-card-front {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -673,7 +574,6 @@ aside {
     align-content: center;
     color: var(--te);
 }
-
 .weapon-stat-card-back {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -693,15 +593,12 @@ aside {
     overflow: auto;
     scroll-snap-type: y mandatory;
 }
-
 .weapon-stat-card-back::-webkit-scrollbar {
     width: 1vh;
 }
-
 .weapon-stat-card-back::-webkit-scrollbar-thumb {
     background-color: var(--ak);
 }
-
 .WPC_Row {
     padding-left: 6%;
     width: 94%;
@@ -709,7 +606,6 @@ aside {
     min-height: 9vh;
     scroll-snap-align: start;
 }
-
 .WPCR_Name {
     width: 100%;
     height: 3vh;
@@ -717,7 +613,6 @@ aside {
     font-size: 2.7vh;
     font-family: 'ss';
 }
-
 .WPCR_TTX {
     display: flex;
     width: 100%;
@@ -732,15 +627,12 @@ aside {
     font-size: 4vh;
     background: linear-gradient(90deg, var(--ak) 50%, var(--ba) 100%);
 }
-
 .WPCR_TTX p:first-child {
     margin: 2% 0% 2% 8%;
-
     min-width: 4vw;
     max-width: 80%;
     height: max-content;
 }
-
 .WeaponPrevIMGZone {
     width: 50%;
     height: 95vh;
@@ -749,7 +641,6 @@ aside {
     justify-content: center;
     flex-direction: column;
 }
-
 .WPIZ_Area {
     height: 80%;
     width: 100%;
@@ -764,13 +655,11 @@ aside {
     overflow: auto;
     scroll-snap-type: x mandatory;
 }
-
 .WPIZ_Area img {
     scroll-snap-align: center;
     width: 80%;
     margin: 0% 10%;
 }
-
 .WPIZ_Buttons {
     width: 100%;
     height: max-content;
@@ -781,7 +670,6 @@ aside {
     justify-content: space-evenly;
     user-select: none;
 }
-
 .WPIZ_Buttons div {
     width: 20%;
     height: 5vh;
@@ -793,7 +681,6 @@ aside {
     font-size: 3vh;
     font-family: 'ss';
 }
-
 .TimeZone {
     display: flex;
     flex-direction: column;
@@ -805,7 +692,6 @@ aside {
     height: max-content;
     min-height: 100vh;
 }
-
 .TimeSettings {
     width: 100%;
     height: max-content;
@@ -817,16 +703,12 @@ aside {
     flex-direction: row;
     margin: 4vh 0vh;
 }
-
-
-
 .inputBox {
     position: relative;
     width: 13vw;
     padding: 2vh 1vw;
     margin: 0vw 1vw;
 }
-
 .inputBox input,
 select {
     padding: 2vh 1vw;
@@ -843,18 +725,15 @@ select {
     -moz-appearance: none;
     box-sizing: border-box;
 }
-
 option {
     color: black;
     outline: none;
     border: none;
     appearance: none;
 }
-
 .inputBox span {
     position: absolute;
     left: 10%;
-
     font-size: 0.7em;
     transform: translateX(14px) translateY(-7.5px);
     padding: 0 6px 1px 5px;
@@ -866,7 +745,6 @@ option {
     color: #e8e8e8;
     top: 2vh;
 }
-
 .TableTime {
     width: 100%;
     height: max-content;
@@ -877,7 +755,6 @@ option {
     justify-content: center;
     flex-direction: column;
 }
-
 .Thead {
     width: 60%;
     height: 10vh;
@@ -891,7 +768,6 @@ option {
     margin-bottom: 2vh;
     border-radius: 5px;
 }
-
 .Thead div {
     display: flex;
     flex-direction: row;
@@ -905,7 +781,6 @@ option {
     font-size: 3.1vh;
     padding: 1vh 0vh;
 }
-
 .weapon-time-table {
     border-radius: 5px;
     width: 60%;
@@ -917,7 +792,6 @@ option {
     border-top: 2px solid var(--ak);
     border-bottom: 2px solid var(--ak);
 }
-
 .td-time {
     display: flex;
     flex-direction: row;
@@ -932,7 +806,6 @@ option {
     font-size: 3.1vh;
     padding: 1vh 0vh;
 }
-
 .tr-time {
     display: flex;
     flex-direction: row;
@@ -945,21 +818,12 @@ option {
     position: relative;
     left: -4px;
 }
-
 .weapon-time-table tbody .tr-time:first-child {
     border-top: none;
 }
-
 .weapon-time-table tbody .tr-time:last-child {
     border-bottom: none;
 }
-
-
-
-
-
-
-
 .Srav_Zone {
     display: flex;
     width: 100%;
@@ -967,7 +831,6 @@ option {
     min-height: 95%;
     overflow-x: auto;
 }
-
 .headerSrav {
     width: 100%;
     height: 5vh;
@@ -976,7 +839,6 @@ option {
     flex-direction: row;
     align-items: center;
 }
-
 .HeadSravBack {
     border-radius: 100px;
     box-shadow: 0px 0px 0px 2px var(--ak);
@@ -990,7 +852,6 @@ option {
     font-size: 2.7vh;
     margin-left: 3vw;
 }
-
 .Srav_Zone {
     width: 100%;
     max-width: 100vw;
@@ -1003,11 +864,9 @@ option {
     flex-wrap: nowrap;
     align-content: center;
 }
-
 .Srav_Zone::-webkit-scrollbar {
     height: 1vh;
 }
-
 .weapon-srav-table {
     border-radius: 5px;
     width: 100%;
@@ -1019,23 +878,18 @@ option {
     font-family: 'ss';
     color: var(--te);
     font-size: 3.5vh;
-
 }
-
 .SravWeapontPrev {
     width: 100%;
     height: 26vh;
     display: flex;
     /*overflow: auto;*/
-
 }
-
 .ISWP_zz {
     width: calc(28vw - 3vw) !important;
     padding-left: 3vw;
     min-width: calc(28vw - 3vw) !important;
 }
-
 .ISWP_ImgZone {
     height: 100%;
     width: 18vw;
@@ -1050,7 +904,6 @@ option {
     align-content: center;
     flex-wrap: nowrap;
 }
-
 .ISWP_ImgZone::after {
     content: "Убрать";
     color: var(--te);
@@ -1063,33 +916,27 @@ option {
     transform: translateY(30vh);
     transition: all .2s linear;
 }
-
 .ISWP_ImgZone:hover {
     background-color: var(--error);
 }
-
 .ISWP_ImgZone:hover img {
     transform: translateY(-30vh);
 }
-
 .ISWP_ImgZone:hover::after {
     transform: rotateY(360deg);
     transform: translateY(-13vh);
 }
-
 .ISWP_ImgZone img {
     max-width: 100%;
     max-height: 100%;
     transition: all .2s linear;
 }
-
 .weapon-srav-table {
     width: 100%;
     max-width: 100%;
     /*overflow: auto;*/
     display: flex;
 }
-
 .tbody-srav {
     display: flex;
     width: max-content;
@@ -1102,7 +949,6 @@ option {
     align-content: flex-start;
     flex-wrap: nowrap;
 }
-
 .NameSrav {
     width: calc(28vw - 3vw) !important;
     max-width: calc(28vw - 3vw) !important;
@@ -1111,7 +957,6 @@ option {
     padding-left: 3vw;
     border: none !important;
 }
-
 .tr-Srav {
     display: flex;
     width: max-content;
@@ -1121,10 +966,7 @@ option {
     height: 9vh;
     align-items: center;
     background-color: var(--li);
-
-
 }
-
 .td-srav {
     flex: 1;
     min-width: calc(24vw - 2px);
@@ -1137,23 +979,18 @@ option {
     border-right: 1px solid var(--ak);
     height: 80%;
 }
-
 .tbody-srav .tr-Srav:first-child {
     border-top: 2px solid var(--ak);
 }
-
 .tbody-srav .tr-Srav:last-child {
     border-bottom: 2px solid var(--ak);
 }
-
 .tr-Srav .td-srav:nth-child(2) {
     border-left: 2px solid var(--ak);
 }
-
 .tr-Srav .td-srav:last-child {
     border-right: none !important;
 }
-
 .SravResult {
     position: fixed;
     display: flex;
@@ -1168,15 +1005,12 @@ option {
     color: var(--ak);
     left: 0;
 }
-
 .ClearInputName {
     display: none;
 }
-
 .SearchInput:not(:placeholder-shown)+.ClearInputName {
     display: block !important;
 }
-
 .TableSravScroll {
     position: absolute;
     right: 3vw;
@@ -1188,7 +1022,6 @@ option {
     flex-wrap: nowrap;
     align-content: center;
 }
-
 .TableSravScroll div {
     border-radius: 100px;
     width: 5vh;
@@ -1200,8 +1033,6 @@ option {
     align-items: center;
     user-select: none;
 }
-
-
 .SearchSrav {
     width: 50vw;
     height: 100vh;
@@ -1210,9 +1041,7 @@ option {
     top: 0;
     transition: all 1s ease-in-out;
     right: 0;
-
 }
-
 .SearchSravHide {
     width: 100%;
     display: flex;
@@ -1221,21 +1050,16 @@ option {
     flex-direction: row;
     flex-wrap: nowrap;
     align-content: center;
-
 }
-
 .FWS {
     transform: translateX(50vw);
 }
-
 .RCSrav {
     background-color: var(--ba) !important;
 }
-
 .RCSrav::-webkit-scrollbar-track {
     background-color: var(--li) !important;
 }
-
 .RCS_2 {
     display: flex;
     width: 100%;
@@ -1255,15 +1079,12 @@ option {
     font-family: 'ss';
     overflow: hidden;
 }
-
 .RCSrav .RCS_2:first-child {
     border-top: 2px solid var(--ak);
 }
-
 .RCSrav .RCS_2:last-child {
     border-bottom: 2px solid var(--ak);
 }
-
 .HeadSravAddMore {
     border-radius: 100px;
     box-shadow: 0px 0px 0px 2px var(--ak);
@@ -1280,21 +1101,16 @@ option {
     border: none !important;
     text-align: center;
 }
-
 .HeadSravAddMore {}
-
 .buttonTops1 {
     background-color: var(--ak);
 }
-
 .buttonTops2 {
     background-color: var(--ak);
 }
-
 .buttonTops3 {
     background-color: var(--ak);
 }
-
 .HeadButtons:hover,
 .SortSatt:hover,
 .ButtonTopsSearch:hover,

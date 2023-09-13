@@ -1,5 +1,4 @@
 @media (max-width: 767px) {
-
 .CrossSettings{
     width: max-content;
     height: max-content;
@@ -29,9 +28,7 @@
     z-index: -1;
     position: relative;
     left: -5vh;
-
 }
-
 .CSPanels::before{
     content: '';
     position: absolute;
@@ -39,7 +36,6 @@
     border-bottom: 5vh solid var(--ak);
     border-right: 5vh solid var(--tr);
 }
-
 .CSPanels:is(:hover, :focus, :active)
 {
     min-width: max-content;
@@ -49,7 +45,6 @@
 }
 .CSPanels:is(:hover, :focus, :active)::before {
     display: none;
-
 }
 .CSPanels::-webkit-scrollbar{
     width: 1vh;
@@ -64,7 +59,6 @@
     flex-wrap: nowrap;
     align-content: center;
     align-items: center;
-
 }
 .CSP_Group div{
     font-family: 'ss';
@@ -77,7 +71,6 @@
     text-align: center;
     overflow: auto;
 }
-
 .CSP_Group div:first-child {
     text-align: left;
     width: calc(100% - 2vh);
@@ -97,24 +90,12 @@
 .CSP_Group div:last-child {
     border-bottom: 2px solid var(--ak);
 }
-
 .CSP_Group div:hover:first-child {
     cursor: not-allowed;
 }
 .CSP_Group div:hover{
     cursor: pointer;
 }
-
-
-
-
-
-
-
-
-
-
-
 .checkbox-wrapper-8{
     display: flex;
     width: 100% !important;
@@ -124,14 +105,10 @@
     flex-wrap: nowrap;
     align-content: center;
     padding: 1vh 0vh;
-
-
-
 }
 .checkbox-wrapper-8 .tgl {
     display: none;
 }
-
 .checkbox-wrapper-8 .tgl,
 .checkbox-wrapper-8 .tgl:after,
 .checkbox-wrapper-8 .tgl:before,
@@ -141,7 +118,6 @@
 .checkbox-wrapper-8 .tgl+.tgl-btn {
     box-sizing: border-box;
 }
-
 .checkbox-wrapper-8 .tgl::-moz-selection,
 .checkbox-wrapper-8 .tgl:after::-moz-selection,
 .checkbox-wrapper-8 .tgl:before::-moz-selection,
@@ -158,7 +134,6 @@
 .checkbox-wrapper-8 .tgl+.tgl-btn::selection {
     background: none;
 }
-
 .checkbox-wrapper-8 .tgl+.tgl-btn {
     outline: 0;
     display: block;
@@ -171,7 +146,6 @@
     -ms-user-select: none;
     user-select: none;
 }
-
 .checkbox-wrapper-8 .tgl+.tgl-btn:after,
 .checkbox-wrapper-8 .tgl+.tgl-btn:before {
     position: relative;
@@ -180,19 +154,15 @@
     width: 50%;
     height: 100%;
 }
-
 .checkbox-wrapper-8 .tgl+.tgl-btn:after {
     left: 0;
 }
-
 .checkbox-wrapper-8 .tgl+.tgl-btn:before {
     display: none;
 }
-
 .checkbox-wrapper-8 .tgl:checked+.tgl-btn:after {
     left: 50%;
 }
-
 .checkbox-wrapper-8 .tgl-skewed+.tgl-btn {
     overflow: hidden;
     transform: skew(-10deg);
@@ -202,7 +172,6 @@
     font-family: sans-serif;
     background: #888;
 }
-
 .checkbox-wrapper-8 .tgl-skewed+.tgl-btn:after,
 .checkbox-wrapper-8 .tgl-skewed+.tgl-btn:before {
     transform: skew(10deg);
@@ -216,53 +185,32 @@
     color: #fff;
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 }
-
 .checkbox-wrapper-8 .tgl-skewed+.tgl-btn:after {
     left: 100%;
     content: attr(data-tg-on);
 }
-
 .checkbox-wrapper-8 .tgl-skewed+.tgl-btn:before {
     left: 0;
     content: attr(data-tg-off);
 }
-
 .checkbox-wrapper-8 .tgl-skewed+.tgl-btn:active {
     background: #888;
 }
-
 .checkbox-wrapper-8 .tgl-skewed+.tgl-btn:active:before {
     left: -10%;
 }
-
 .checkbox-wrapper-8 .tgl-skewed:checked+.tgl-btn {
     background: #86d993;
 }
-
 .checkbox-wrapper-8 .tgl-skewed:checked+.tgl-btn:before {
     left: -100%;
 }
-
 .checkbox-wrapper-8 .tgl-skewed:checked+.tgl-btn:after {
     left: 0;
 }
-
 .checkbox-wrapper-8 .tgl-skewed:checked+.tgl-btn:active:after {
     left: 10%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 .radio-input{
     display: flex;
     flex-direction: row;
@@ -273,8 +221,6 @@
     align-content: center;
     overflow: auto;
 }
-
-
 .input {
     -webkit-appearance: none;
     /* remove default */
@@ -293,45 +239,24 @@
         -webkit-transform .25s cubic-bezier(.8, 0, 1, 1);
     outline: none;
 }
-
 .input:checked {
     -webkit-transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1),
         -webkit-transform .25s cubic-bezier(0, 0, .2, 1);
 }
-
 .input:active {
     -webkit-transform: scale(1.5);
     -webkit-transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);
 }
-
-
-
 /* The up/down direction logic */
-
 .input,
 .input:active {
     background-position: 24px 0px;
 }
-
 .input:checked {
     background-position: 0 0;
 }
-
 .input:checked~.input,
 .input:checked~.input:active {
     background-position: -24px 0px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

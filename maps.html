@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="./CrossAssets/Thems/Winter.css" id="ThemsLink">
     <link rel="stylesheet" href="./CrossAssets/main.css">
     <link rel="stylesheet" href="./WeaponsPage/Desctop.css">
@@ -12,17 +11,9 @@
     <link rel="stylesheet" href="./CrossAssets/SettingsMobile.css">
     <link rel="stylesheet" href="./CrossAssets/Smooting/Smooth.css" id="SmoothinkLink">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
     <title>Справочник Gen II</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
-
-
-
-
-
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
@@ -34,12 +25,10 @@
     <meta name="msapplication-TileColor" content="#050713">
     <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-
-    
 </head>
 <body>
     <!--Сортировки, поиски и т.д-->
-    <article class="Window_One" >
+    <article class="Window_One">
         <div class="header">
             <a class="LogoHead" href="./index.html">
                 <p>Справочник</p>
@@ -51,26 +40,21 @@
                 <div class="btnSelected" onclick="openSearchByName(this)">Название</div>
             </div>
         </div>
-
         <!--Стандартные карточки-->
         <aside id="StandartCard" hidden>
             <div class="SearchName" id="SearchNameLabel">
-                
             </div>
             <div class="CardsZone" id="CardZoneMain">
             </div>
         </aside>
-
         <!--Поиск по Строителю-->
         <aside id="SearchByType" hidden>
             <div class="SettingName">
                 Поиск по строителю
             </div>
             <div class="SettingsZone" id="BuildersZone">
-
             </div>
         </aside>
-
         <!--Поиск по платформе-->
         <aside id="SearchByIvent" hidden>
             <div class="SettingName">
@@ -78,12 +62,9 @@
             </div>
             <div class="SettingsZone3">
                 <div class="MainSettingSort" id="PlatformsZone">
-                    
                 </div>
-                
             </div>
         </aside>
-
         <!--Поиск по названию-->
         <aside id="SearchByName">
             <div class="SettingName">
@@ -91,7 +72,8 @@
             </div>
             <div class="SearchByNameZone">
                 <div class="SearchConteiner">
-                    <input type="text" class="SearchInput" pattern=".{1,}" placeholder="Введи название карты.." oninput="search(this)">
+                    <input type="text" class="SearchInput" pattern=".{1,}" placeholder="Введи название карты.."
+                        oninput="search(this)">
                     <div class="ClearInputName" onclick="clearSearchInput()">×</div>
                 </div>
             </div>
@@ -101,7 +83,6 @@
             </div>
         </aside>
     </article>
-    
     <!--Просмотр Оружия-->
     <article class="Window_Two" hidden>
         <div class="header">
@@ -109,7 +90,6 @@
                 <p id='logoandback' onclick="BackToOne()">Справочник</p>
             </div>
             <div class="HeadButtons">
-                
                 <div id="ShareButton" onclick="getShareLink(this)">Поделиться</div>
             </div>
         </div>
@@ -151,7 +131,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="weapon-stat-card-back">
                             <div class="WPC_Row">
                                 <div class="WPCR_Name">
@@ -161,9 +140,7 @@
                                     <p id="WPView_Descript"></p>
                                 </div>
                             </div>
-                            
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -173,13 +150,8 @@
             </div>
         </div>
     </article>
-
-
-
-
     <!--Ноды для клонирования: Карточки, колонки и т.д-->
     <div class="CloneNODE" hidden>
-
         <!---->
         <!--Карточка оружия-->
         <div class="card" id="NodeToClone_MainCard">
@@ -190,8 +162,6 @@
                 <span id="NTC_MC_name">Тяжёлоукладчик (Не заряженный)</span>
             </div>
         </div>
-        
-
         <img src="./qq71.png" id="WPView_Image">
         <!---->
         <!--Строка результата поиска по имени-->
@@ -199,7 +169,7 @@
             <div class="NameRow" id="twrr_WeaponName">
                 Фамас
             </div>
-            <div class="OtherLabelRow" >
+            <div class="OtherLabelRow">
                 <div class="TypeWeaponRR OLR_deco OLRD_FIRST" id="twrr_TypeWeapon">
                     Автомат
                 </div>
@@ -211,42 +181,33 @@
                 </div>
             </div>
         </div>
-
         <!---->
         <!--Кнопка скина-->
         <div class="SkinButtonAndPrev" id="NodeToClone_SkinButtonAndPrev">
             <img src="./qq71.png">
         </div>
-
         <!---->
         <!--ячейка в сравнении-->
         <template id="NodeToClone_tableBit">
             <td class="td-srav"></td>
         </template>
-
         <!---->
         <!--Кнопка сортсэт-->
         <div class="SortSatt" id="NodeToClone_SortByTypeButton_Cold" onclick="filterWeaponsByType('Холодное')">
             Холодное
         </div>
-
         <!---->
         <!--Изображение в сравнении-->
         <div class="ISWP_ImgZone" id="NodeToClone_ImageSrav">
             <img src="">
         </div>
-
         <!---->
         <!--Строка результата поиска по имени! В СРАВНЕНИИ!!-->
         <div class="RCS_2" id="NodeToClone_rowResuldNameSrav">
         </div>
-
     </div>
-    
     <script src="./MapsPage/Brain.js"></script>
     <script src="./MapsPage/UI_Events.js"></script>
-
-
     <aside class="CrossSettings">
         <div class="CSPanels">
             <div class="CSP_Group">
@@ -257,7 +218,7 @@
                 <div onclick="changeTheme('8 марта')" title="Для Мегеры, выполняю обещание 😉">
                     8 марта
                 </div>
-                <div onclick="changeTheme('Dracula')" >
+                <div onclick="changeTheme('Dracula')">
                     Dracula
                 </div>
                 <div onclick="changeTheme('Лето')">
@@ -276,7 +237,7 @@
                     RetroWave
                 </div>
                 <div onclick="changeTheme('Trifolium')" title="За основу взят 4 сезон блокады">
-                    Trifolium 
+                    Trifolium
                 </div>
                 <div onclick="changeTheme('Harun')" title="За основу взят 4 сезон блокады">
                     Harun

@@ -4,7 +4,28 @@
     --ak: #00EA76;
     --te: #EFF3F7;
     --tr: rgba(255, 255, 255, 0);
+
     --error: #ff5555;
+    /*Для настроек*/
+
+    --PLS_CloseSettings: rgba(233, 29, 29, 0.729);
+    --Settings_is_open: rgba(73, 233, 29, 0.729);
+    /*Настройки кнопок в настройке*/
+    --btn-default-bg: rgb(41, 41, 41);
+    --btn-hover-bg: rgb(51, 51, 51);
+    --btn-shadow-color: rgba(0, 0, 0, 0.137);
+    --default-btn-color: #fff;
+    /*универсальный зелёный для настроек
+
+    --mainSettings_GREEN: hsla(142, 100%, 43%, 1);
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    */
+    --mainSettings_GREEN_H: 142;
+    --mainSettings_GREEN_S: 100%;
+    --mainSettings_GREEN_L: 43%;
+    --mainSettings_GREEN_A: 1;
+    /*уведомления Тостифи*/
+    --toastify_notify: linear-gradient(135deg, var(--error), var(--ak));
 }
 
 

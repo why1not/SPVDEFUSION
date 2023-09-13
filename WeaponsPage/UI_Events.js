@@ -1,5 +1,4 @@
 /*
-
 // Создание кнопки
 var button = document.createElement('button');
 button.textContent = 'Переключить блоки';
@@ -7,12 +6,10 @@ button.style.position = 'fixed';
 button.style.bottom = '10px';
 button.style.left = '10px';
 document.body.appendChild(button);
-
 // Обработчик клика по кнопке
 button.addEventListener('click', function () {
     var windowOne = document.querySelector('.Window_One');
     var windowTwo = document.querySelector('.Window_Two');
-
     if (windowOne.hasAttribute('hidden')) {
         windowOne.removeAttribute('hidden');
         windowTwo.setAttribute('hidden', 'true');
@@ -21,44 +18,6 @@ button.addEventListener('click', function () {
         windowTwo.removeAttribute('hidden');
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Создание кнопки
 var button2 = document.createElement('button');
 button2.textContent = 'Получить случайное слово и скопировать ссылку';
@@ -66,16 +25,13 @@ button2.style.position = 'fixed';
 button2.style.bottom = '30px'; // На 20 пикселей выше первой кнопки
 button2.style.left = '10px';
 document.body.appendChild(button2);
-
 // Обработчик события клика по кнопке
 button2.onclick = function () {
     var words = ['AA12', 'M4A1', 'AK-47', 'Sniper']; // Здесь должен быть ваш список слов
     var randomWord = getRandomWord(words);
-
     // Обновление URL страницы
     var newUrl = window.location.href.split('?')[0] + '?share=' + randomWord;
     window.location.href = newUrl;
-
     // Копирование ссылки в буфер обмена
     navigator.clipboard.writeText(newUrl)
         .then(function () {
@@ -85,13 +41,11 @@ button2.onclick = function () {
             alert('Ошибка при копировании ссылки. Пожалуйста сообщите чтобы мы её исправили, спасибо :3', error);
         });
 };
-
 // Функция для получения случайного слова из списка
 function getRandomWord(words) {
     var randomIndex = Math.floor(Math.random() * words.length);
     return words[randomIndex];
 }
-
 // Создание кнопки
 var button3 = document.createElement('button');
 button3.textContent = 'Получить адресную строку и случайное слово';
@@ -99,23 +53,17 @@ button3.style.position = 'fixed';
 button3.style.bottom = '70px'; // На 20 пикселей выше первой кнопки
 button3.style.left = '10px';
 document.body.appendChild(button3);
-
 // Функция обработки клика по кнопке
 function handleClick() {
     var url = window.location.href;
     var searchParams = new URLSearchParams(url.split('?')[1]);
     var randomWord = searchParams.get('share');
-
     // Вывод результатов в консоль
     console.log('Адресная строка:', url);
     console.log('Случайное слово:', randomWord);
 }
-
 // Привязка функции обработки клика к событию onclick кнопки
 button3.onclick = handleClick;
-
-
-
 */
 /*
 var adminButtons = document.createElement("div");
@@ -124,7 +72,6 @@ adminButtons.style.position = "fixed";
 adminButtons.style.bottom = "10px";
 adminButtons.style.left = "10px";
 document.body.appendChild(adminButtons);
-
 var buttonNames = [
     "Получить Темы - установить",
     "Загрузить ссылку",
@@ -134,7 +81,6 @@ var buttonNames = [
     "Voxel вид",
     "Открыть настройки"
 ];
-
 buttonNames.forEach(function (buttonName) {
     var button = document.createElement("button");
     button.className = "admin-button";
@@ -143,17 +89,13 @@ buttonNames.forEach(function (buttonName) {
         alert("Вы нажали кнопку '" + buttonName + "'");
     });
     adminButtons.appendChild(button);
-
     // Добавляем отступ между кнопками
     var spacer = document.createElement("div");
     spacer.style.height = "10px";
     adminButtons.appendChild(spacer);
 });
 */
-
-
 // Автоматически вызываем функцию при загрузке окна
-
 function stringToHex(text) {
     let hexString = '';
     for (let i = 0; i < text.length; i++) {
@@ -162,33 +104,24 @@ function stringToHex(text) {
     }
     return hexString;
 }
-
 function getShareLink(button) {
     // Получение значения атрибута "share" из кнопки
     const shareValue = button.getAttribute('share');
-
     // Проверка наличия значения атрибута "share"
     if (shareValue) {
         // Кодируем значение атрибута в 16-ричный код
         const encodedShareValue = stringToHex(shareValue).replace(/\s+/g, '_');
-
         // Создание ссылки с полученным значением атрибута "share" (с нижними подчеркиваниями, если есть пробелы)
         const link = `https://blockadebook.ru/weapon.html?share=${encodedShareValue}`;
         console.warn(link);
-
         // Копируем ссылку в буфер обмена
         copyToClipboard(link);
-
         // Сообщаем пользователю, что ссылка была скопирована
         alert('Ссылка скопирована в буфер обмена.');
     } else {
         console.warn('Ссылка не сработала');
     }
 }
-
-
-
-
 function copyToClipboard(text) {
     const textArea = document.createElement('textarea');
     textArea.value = text;
@@ -197,49 +130,20 @@ function copyToClipboard(text) {
     document.execCommand('copy');
     document.body.removeChild(textArea);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function scrollBack() {
     var container = document.querySelector('.Srav_Zone');
     var blockWidth = (0.24 * window.innerWidth) + 2;
-
     container.scrollLeft -= blockWidth;
 }
-
 function scrollForward() {
     var container = document.querySelector('.Srav_Zone');
     var blockWidth = (0.24 * window.innerWidth) + 2;
-
     container.scrollLeft += blockWidth;
 }
-
 function resetScroll() {
     var container = document.querySelector('.Srav_Zone');
-
     container.scrollLeft = 0;
 }
-
-
-
-
-
-
-
-
-
 function openSearchByName(CallBtn) {
     hideAllBlocks();
     document.getElementById('StandartCard').hidden = true;
@@ -247,10 +151,8 @@ function openSearchByName(CallBtn) {
     document.getElementById('SearchByIvent').hidden = true;
     document.getElementById('SearchByTop').hidden = true;
     document.getElementById('SearchByName').hidden = false;
-
     CallBtn.classList.add('btnSelectedHead');
 }
-
 function openSearchByType(CallBtn) {
     hideAllBlocks();
     document.getElementById('StandartCard').hidden = true;
@@ -258,10 +160,8 @@ function openSearchByType(CallBtn) {
     document.getElementById('SearchByIvent').hidden = true;
     document.getElementById('SearchByTop').hidden = true;
     document.getElementById('SearchByName').hidden = true;
-
     CallBtn.classList.add('btnSelectedHead');
 }
-
 function openSearchByIvent(CallBtn) {
     hideAllBlocks();
     document.getElementById('StandartCard').hidden = true;
@@ -269,10 +169,8 @@ function openSearchByIvent(CallBtn) {
     document.getElementById('SearchByIvent').hidden = false;
     document.getElementById('SearchByTop').hidden = true;
     document.getElementById('SearchByName').hidden = true;
-
     CallBtn.classList.add('btnSelectedHead');
 }
-
 function openSearchByTop(CallBtn) {
     hideAllBlocks();
     document.getElementById('StandartCard').hidden = true;
@@ -280,7 +178,6 @@ function openSearchByTop(CallBtn) {
     document.getElementById('SearchByIvent').hidden = true;
     document.getElementById('SearchByTop').hidden = false;
     document.getElementById('SearchByName').hidden = true;
-
     CallBtn.classList.add('btnSelectedHead');
 }
 function openStandartCard() {
@@ -291,95 +188,77 @@ function openStandartCard() {
     document.getElementById('SearchByTop').hidden = true;
     document.getElementById('SearchByName').hidden = true;
 }
-
 function hideAllBlocks() {
     var buttons = document.getElementsByClassName('btnSelectedHead');
     for (var j = 0; j < buttons.length; j++) {
         buttons[j].classList.remove('btnSelectedHead');
     }
 }
-
-
-
 function hideAllBlocks2() {
     var buttons = document.getElementsByClassName('btnSelectedIvents');
     for (var j = 0; j < buttons.length; j++) {
         buttons[j].classList.remove('btnSelectedIvents');
     }
 }
-
 function openBattlePass(CallBtn) {
     if (!CallBtn.classList.contains('btnSelectedIvents')) {
         hideAllBlocks2();
         document.getElementById('BattlePass').hidden = false;
         document.getElementById('NewYear').hidden = true;
         document.getElementById('Hellowen').hidden = true;
-
         CallBtn.classList.add('btnSelectedIvents');
     } else {
         document.getElementById('BattlePass').hidden = true;
     }
 }
-
 function openNewYear(CallBtn) {
     if (!CallBtn.classList.contains('btnSelectedIvents')) {
         hideAllBlocks2();
         document.getElementById('BattlePass').hidden = true;
         document.getElementById('NewYear').hidden = false;
         document.getElementById('Hellowen').hidden = true;
-
         CallBtn.classList.add('btnSelectedIvents');
     } else {
         document.getElementById('NewYear').hidden = true;
     }
 }
-
 function openHellowen(CallBtn) {
     if (!CallBtn.classList.contains('btnSelectedIvents')) {
         hideAllBlocks2();
         document.getElementById('BattlePass').hidden = true;
         document.getElementById('NewYear').hidden = true;
         document.getElementById('Hellowen').hidden = false;
-
         CallBtn.classList.add('btnSelectedIvents');
     } else {
         document.getElementById('Hellowen').hidden = true;
     }
 }
-
 function clearSearchInput() {
     var searchInput = document.querySelector('.SearchInput');
     searchInput.value = '';
 }
-
 function clearSearchInput2() {
     var searchInput = document.querySelector('#SearchInputSrav');
     searchInput.value = '';
 }
-
 function openSravnenie(CallBtn) {
     document.querySelector('.Window_One').hidden = true;
     document.querySelector('.Window_Two').hidden = true;
     document.querySelector('.Window_Tree').hidden = false;
-
     var elementsWithAttribute = document.querySelectorAll('[thisbuttoncallsravnenie]');
-
     elementsWithAttribute.forEach(function (element) {
         element.removeAttribute('thisbuttoncallsravnenie');
     });
-
     if (!CallBtn.hasAttribute('thisbuttoncallsravnenie')) {
         CallBtn.setAttribute('thisbuttoncallsravnenie', '');
     }
 }
 function findSravnenieElement() {
     var elementsWithId = document.querySelectorAll('[id^="SravnenieOpennButton"]');
-
     elementsWithId.forEach(function (element) {
         if (element.hasAttribute('thisbuttoncallsravnenie')) {
             var buttonId = element.id;
             var windowToShow = buttonId.split(' ')[1];
-
             if (windowToShow === '_Window_One') {
                 document.querySelector('.Window_One').hidden = false;
                 document.querySelector('.Window_Two').hidden = true;
@@ -392,14 +271,8 @@ function findSravnenieElement() {
         }
     });
 }
-
-
-
-
-
 function handleButtonClick(button, value) {
     var buttons = document.querySelectorAll(".SSTT2");
-
     buttons.forEach(function (btn) {
         if (btn === button) {
             // Проверяем, нажата ли уже данная кнопка
@@ -418,60 +291,41 @@ function handleButtonClick(button, value) {
         }
     });
 }
-
-
-
-
 function handleButtonClick2(button, hValue) {
     var buttons = button.parentElement.querySelectorAll(".SortSatt");
-
     buttons.forEach(function (btn) {
         btn.classList.remove("buttonTops1");
     });
-
     button.classList.add("buttonTops1");
-
     // Далее можно вызвать вашу функцию filterWeaponsByType() с передачей выбранного значения
     handleGroup2Click(hValue);
 }
-
-
 function handleButtonClick3(button, value) {
     var buttons = button.parentElement.querySelectorAll(".SortSatt");
-
     buttons.forEach(function (btn) {
         btn.classList.remove("buttonTops1");
     });
-
     button.classList.add("buttonTops1");
-
     // Далее можно вызвать вашу функцию filterWeaponsByType() с передачей выбранного значения
     handleGroup3Click(value);
 }
-
 function handleButtonClick4(button, value) {
     var buttons = button.parentElement.querySelectorAll(".SortSatt");
-
     buttons.forEach(function (btn) {
         btn.classList.remove("buttonTops1");
     });
-
     button.classList.add("buttonTops1");
-
     // Далее можно вызвать вашу функцию filterWeaponsByType() с передачей выбранного значения
     handleGroup4Click(value);
 }
-
 function OpenWindowTwo() {
     document.querySelector('.Window_One').hidden = true;
     document.querySelector('.Window_Two').hidden = false;
     document.getElementById('logoandback').innerHTML = "Вернуться";
 };
-
 /*
 function OpenSkinsZone() {
     var CSWeap = document.querySelector('#containerSkinwWpis');
-
     if (CSWeap.hasAttribute('hidden')) {
         CSWeap.hidden = false;
     } else {
@@ -479,8 +333,6 @@ function OpenSkinsZone() {
     }
 }
 */
-
-
 function BackToOne() {
     var windowOne = document.querySelector('.Window_One');
     var windowTwo = document.querySelector('.Window_Two');
@@ -493,34 +345,21 @@ function BackToOne() {
         windowTwo.removeAttribute('hidden');
         document.getElementById('logoandback').textContent = "Справочник";
     }
-    
 }
-
-
-
-
-
 function showBlockSrav() {
     var block = document.getElementById("SearchSravnenie"); // Замените "yourBlockId" на идентификатор вашего блока
-    
     block.style.transform = "translateX(0vw)";
 }
-
 function HideBlockSrav() {
     var block = document.getElementById("SearchSravnenie"); // Замените "yourBlockId" на идентификатор вашего блока
-
     block.style.transform = "translateX(50vw)";
 }
-
-
-
 function toggleTableVisibility(sravPump) {
     var sravPumpLevel = sravPump.value;
     var tableStok = document.getElementById('TableStok');
     var tableFull = document.getElementById('TableFull');
     var tableStokt = document.getElementById('TableTimeStock');
     var tableFullt = document.getElementById('TableTimeFull');
-
     if (sravPumpLevel === 'Сток') {
         tableStok.hidden = false;
         tableFull.hidden = true;
@@ -536,7 +375,6 @@ function toggleTableVisibility(sravPump) {
     }
     //findMinimumReinforcedValue();
 }
-
 function MoreinfoSrav(btn) {
     var TableTTX = document.getElementById('TablleTTX');
     var TableTime = document.getElementById('TableTime');
@@ -555,4 +393,3 @@ function MoreinfoSrav(btn) {
         console.log('Некорректное значение btn');
     }
 }
-

@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="./CrossAssets/Thems/Winter.css" id="ThemsLink">
     <link rel="stylesheet" href="./CrossAssets/main.css">
     <link rel="stylesheet" href="./WeaponsPage/Desctop.css">
@@ -11,18 +10,10 @@
     <link rel="stylesheet" href="./CrossAssets/Settings.css">
     <link rel="stylesheet" href="./CrossAssets/SettingsMobile.css">
     <link rel="stylesheet" href="./CrossAssets/Smooting/Smooth.css" id="SmoothinkLink">
-    
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
     <title>Справочник Gen II</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
-
-
-
-
-
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
@@ -34,12 +25,10 @@
     <meta name="msapplication-TileColor" content="#050713">
     <meta name="msapplication-config" content="./assets/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-
-    
 </head>
 <body>
     <!--Сортировки, поиски и т.д-->
-    <article class="Window_One" >
+    <article class="Window_One">
         <div class="header">
             <a class="LogoHead" href="./index.html">
                 <p>Справочник</p>
@@ -52,7 +41,6 @@
                 <!--<div onclick="openSravnenie(this)" id="SravnenieOpennButton _Window_One">Сравнение</div>-->
             </div>
         </div>
-
         <!--Стандартные карточки-->
         <aside id="StandartCard" hidden>
             <div class="SearchName" id="SearchNameLabel">
@@ -61,32 +49,34 @@
             <div class="CardsZone" id="CardZoneMain">
             </div>
         </aside>
-
         <!--Поиск по типу-->
         <aside id="SearchByType" hidden>
             <div class="SettingName">
                 Поиск по типу бонуса
             </div>
-                <div class="SettingsZone"><div class="SortSatt" id="SortByTypeButton_Cold" onclick="filterWeaponsByResistBust('Выкл'); STNAME('Без бонусов')">
+            <div class="SettingsZone">
+                <div class="SortSatt" id="SortByTypeButton_Cold"
+                    onclick="filterWeaponsByResistBust('Выкл'); STNAME('Без бонусов')">
                     Без бонусов
                 </div>
-                <div class="SortSatt" id="SortByTypeButton_Cold" onclick="filterWeaponsByResistBust('Защита'); STNAME('Только защитные')">
+                <div class="SortSatt" id="SortByTypeButton_Cold"
+                    onclick="filterWeaponsByResistBust('Защита'); STNAME('Только защитные')">
                     Только защитные
                 </div>
-                <div class="SortSatt" id="SortByTypeButton_Rifle" onclick="filterWeaponsByResistBust('ДопУрон'); STNAME('Только с доп. уроном')">
+                <div class="SortSatt" id="SortByTypeButton_Rifle"
+                    onclick="filterWeaponsByResistBust('ДопУрон'); STNAME('Только с доп. уроном')">
                     Только с доп. уроном
                 </div>
-                <div class="SortSatt" id="SortByTypeButton_Automatic" onclick="filterWeaponsByResistBust('Блоки'); STNAME('Дополнительные блоки')">
+                <div class="SortSatt" id="SortByTypeButton_Automatic"
+                    onclick="filterWeaponsByResistBust('Блоки'); STNAME('Дополнительные блоки')">
                     Дополнительные блоки
                 </div>
-                <div class="SortSatt" id="SortByTypeButton_MachineGun" onclick="filterWeaponsByResistBust('Комбо'); STNAME('Защита + Доп. Урон')">
+                <div class="SortSatt" id="SortByTypeButton_MachineGun"
+                    onclick="filterWeaponsByResistBust('Комбо'); STNAME('Защита + Доп. Урон')">
                     Защита + Доп. Урон
                 </div>
-
-
             </div>
         </aside>
-
         <!--Поиск по ивенту-->
         <aside id="SearchByIvent" hidden>
             <div class="SettingName">
@@ -97,7 +87,7 @@
                     <div onclick="openBattlePass(this);" class="SortSatt GroupSort">
                         Battle-pass
                     </div>
-                    <div  onclick="filterWeaponsByEdition('Новый год'); STNAME('Новый год')" class="SortSatt">
+                    <div onclick="filterWeaponsByEdition('Новый год'); STNAME('Новый год')" class="SortSatt">
                         Новый год
                     </div>
                     <div onclick="filterWeaponsByEdition('Хэллоуин'); STNAME('Хэллоуин')" class="SortSatt">
@@ -107,11 +97,9 @@
                         Обычные
                     </div>
                 </div>
-
-
-
                 <div class="MainSettingSort" hidden id="BattlePass">
-                    <div class="SortSatt" onclick="filterWeaponsByEdition('Вторжение корпорации'); STNAME('Вторжение корпорации')">
+                    <div class="SortSatt"
+                        onclick="filterWeaponsByEdition('Вторжение корпорации'); STNAME('Вторжение корпорации')">
                         Вторжение корпорации
                     </div>
                     <div class="SortSatt" onclick="filterWeaponsByEdition('Стимпанк'); STNAME('Стимпанк')">
@@ -123,8 +111,6 @@
                 </div>
             </div>
         </aside>
-
-
         <!--Поиск по названию-->
         <aside id="SearchByName1">
             <div class="SettingName">
@@ -132,18 +118,17 @@
             </div>
             <div class="SearchByNameZone">
                 <div class="SearchConteiner">
-                    <input type="text" class="SearchInput" pattern=".{1,}" placeholder="Введи название скина.." oninput="search(this)">
+                    <input type="text" class="SearchInput" pattern=".{1,}" placeholder="Введи название скина.."
+                        oninput="search(this)">
                     <div class="ClearInputName" onclick="clearSearchInput()">×</div>
                 </div>
             </div>
             <div class="SearchResultZone">
                 <div class="ResultCard" id="ResuldCardByName">
-                   
                 </div>
             </div>
         </aside>
     </article>
-    
     <!--Просмотр Оружия-->
     <article class="Window_Two" hidden>
         <div class="header">
@@ -194,7 +179,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="weapon-stat-card-back">
                             <div class="WPC_Row">
                                 <div class="WPCR_Name" id="labelResitBust">
@@ -213,7 +197,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
             </div>
@@ -226,19 +209,13 @@
                                                 <img src="./qq71.png">
                                             </div>
                                             -->
-                        
                     </div>
                 </div>
             </div>
         </div>
     </article>
-
-   
-
-
     <!--Ноды для клонирования: Карточки, колонки и т.д-->
     <div class="CloneNODE" hidden>
-
         <!---->
         <!--Карточка оружия-->
         <div class="card" id="NodeToClone_MainCard">
@@ -249,14 +226,13 @@
                 <span id="NTC_MC_name">Тяжёлоукладчик (Не заряженный)</span>
             </div>
         </div>
-        
         <!---->
         <!--Строка результата поиска по имени-->
         <div class="ResultRow" id="NodeToClone_rowResuldName">
             <div class="NameRow" id="twrr_WeaponName">
                 Фамас
             </div>
-            <div class="OtherLabelRow" >
+            <div class="OtherLabelRow">
                 <div class="TypeWeaponRR OLR_deco OLRD_FIRST" id="twrr_TypeWeapon">
                     Автомат
                 </div>
@@ -268,37 +244,28 @@
                 </div>
             </div>
         </div>
-
         <!---->
         <!--Кнопка скина-->
         <div class="SkinButtonAndPrev" id="NodeToClone_SkinButtonAndPrev">
             <img src="./qq71.png">
         </div>
-
         <!---->
         <!--ячейка в сравнении-->
         <template id="NodeToClone_tableBit">
             <td class="td-srav"></td>
         </template>
-
-
         <!---->
         <!--Изображение в сравнении-->
         <div class="ISWP_ImgZone" id="NodeToClone_ImageSrav">
             <img src="">
         </div>
-
         <!---->
         <!--Строка результата поиска по имени! В СРАВНЕНИИ!!-->
         <div class="RCS_2" id="NodeToClone_rowResuldNameSrav">
         </div>
-
     </div>
-    
     <script src="./SkinsPage/Brain.js"></script>
     <script src="./SkinsPage/UI_Events.js"></script>
-
-
     <aside class="CrossSettings">
         <div class="CSPanels">
             <div class="CSP_Group">
@@ -309,7 +276,7 @@
                 <div onclick="changeTheme('8 марта')" title="Для Мегеры, выполняю обещание 😉">
                     8 марта
                 </div>
-                <div onclick="changeTheme('Dracula')" >
+                <div onclick="changeTheme('Dracula')">
                     Dracula
                 </div>
                 <div onclick="changeTheme('Лето')">
@@ -328,7 +295,7 @@
                     RetroWave
                 </div>
                 <div onclick="changeTheme('Trifolium')" title="За основу взят 4 сезон блокады">
-                    Trifolium 
+                    Trifolium
                 </div>
                 <div onclick="changeTheme('Harun')" title="За основу взят 4 сезон блокады">
                     Harun
