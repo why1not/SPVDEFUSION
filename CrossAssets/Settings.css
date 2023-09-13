@@ -1,0 +1,702 @@
+@media (min-width: 768px) {
+.CrossSettings{
+    width: 25vw;
+    height: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: row;
+    align-content: center;
+    flex-wrap: nowrap;   
+    z-index: 99999;
+    overflow: visible;
+}
+.CSPanels{
+    width: 15vw;
+    height: calc(100% - 6vh);
+    background-color: var(--li);
+    overflow: scroll;
+    max-width: 15vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    left: -15vw;
+    position: absolute;
+    transition: all 0.2s ease-in-out;
+}
+.CSPanels::-webkit-scrollbar{
+    width: 0.4vh;
+    position: absolute !important;
+    
+}
+.HoveredSettingsButton{
+    position: absolute;
+    width: 2.3vw;
+    height: 2.3vw;
+    background-image: url('../assets/setting.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: all 0.2s ease-in-out;
+    left: 0vw;
+}
+.RadioCheckedButtonSettings {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px;
+    opacity: 0;
+}
+.selectedcheckHSB{
+    background-color: var(--Settings_is_open) !important;
+}
+.selectedcheckHSB:hover{
+    background-color: var(--PLS_CloseSettings) !important;
+}
+
+.CSP_Group{
+    height: max-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: nowrap;
+    
+}
+.CSP_Group:not(:first-child){
+    margin-top: 2vh;
+}
+.CSP_Group div:first-child {
+    text-align: center;
+    font-family: 'ss';
+    font-size: 3.5vh;
+    color: var(--te);
+}
+
+/*Cтили забаганных кнопок*/
+.ui-btn {
+    --btn-padding: 1vh 2vw;
+    --btn-transition: .3s;
+    --btn-letter-spacing: .1rem;
+    --btn-animation-duration: 1.2s;
+    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+    --font-size: 16px;
+    /* 👆 this field should not be empty */
+    --font-weight: 600;
+    --font-family: Menlo, Roboto Mono, monospace;
+    /* 👆 this field should not be empty */
+}
+
+/* button settings 👆 */
+
+.ui-btn {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: var(--btn-padding);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: var(--default-btn-color);
+    font: var(--font-weight) var(--font-size) var(--font-family);
+    background: var(--btn-default-bg);
+    border: none;
+    cursor: pointer;
+    -webkit-transition: var(--btn-transition);
+    transition: var(--btn-transition);
+    overflow: hidden;
+    -webkit-box-shadow: var(--btn-shadow);
+    box-shadow: var(--btn-shadow);
+}
+
+.ui-btn span {
+    letter-spacing: var(--btn-letter-spacing);
+    -webkit-transition: var(--btn-transition);
+    transition: var(--btn-transition);
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: relative;
+    background: inherit;
+}
+
+.ui-btn span::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    content: "";
+    background: inherit;
+}
+
+.ui-btn:hover,
+.ui-btn:focus {
+    background: var(--btn-hover-bg);
+}
+
+.ui-btn:hover span,
+.ui-btn:focus span {
+    color: var(--ak);
+}
+
+.ui-btn:hover span::before,
+.ui-btn:focus span::before {
+    -webkit-animation: chitchat linear both var(--btn-animation-duration);
+    animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@-webkit-keyframes chitchat {
+    0% {
+        content: "#";
+    }
+
+    5% {
+        content: ".";
+    }
+
+    10% {
+        content: "^{";
+    }
+
+    15% {
+        content: "-!";
+    }
+
+    20% {
+        content: "#$_";
+    }
+
+    25% {
+        content: "№:0";
+    }
+
+    30% {
+        content: "#{+.";
+    }
+
+    35% {
+        content: "@}-?";
+    }
+
+    40% {
+        content: "?{4@%";
+    }
+
+    45% {
+        content: "=.,^!";
+    }
+
+    50% {
+        content: "?2@%";
+    }
+
+    55% {
+        content: "\;1}]";
+    }
+
+    60% {
+        content: "?{%:%";
+        right: 0;
+    }
+
+    65% {
+        content: "|{f[4";
+        right: 0;
+    }
+
+    70% {
+        content: "{4%0%";
+        right: 0;
+    }
+
+    75% {
+        content: "'1_0<";
+        right: 0;
+    }
+
+    80% {
+        content: "{0%";
+        right: 0;
+    }
+
+    85% {
+        content: "]>'";
+        right: 0;
+    }
+
+    90% {
+        content: "4";
+        right: 0;
+    }
+
+    95% {
+        content: "2";
+        right: 0;
+    }
+
+    100% {
+        content: "";
+        right: 0;
+    }
+}
+
+@keyframes chitchat {
+    0% {
+        content: "#";
+    }
+
+    5% {
+        content: ".";
+    }
+
+    10% {
+        content: "^{";
+    }
+
+    15% {
+        content: "-!";
+    }
+
+    20% {
+        content: "#$_";
+    }
+
+    25% {
+        content: "№:0";
+    }
+
+    30% {
+        content: "#{+.";
+    }
+
+    35% {
+        content: "@}-?";
+    }
+
+    40% {
+        content: "?{4@%";
+    }
+
+    45% {
+        content: "=.,^!";
+    }
+
+    50% {
+        content: "?2@%";
+    }
+
+    55% {
+        content: "\;1}]";
+    }
+
+    60% {
+        content: "?{%:%";
+        right: 0;
+    }
+
+    65% {
+        content: "|{f[4";
+        right: 0;
+    }
+
+    70% {
+        content: "{4%0%";
+        right: 0;
+    }
+
+    75% {
+        content: "'1_0<";
+        right: 0;
+    }
+
+    80% {
+        content: "{0%";
+        right: 0;
+    }
+
+    85% {
+        content: "]>'";
+        right: 0;
+    }
+
+    90% {
+        content: "4";
+        right: 0;
+    }
+
+    95% {
+        content: "2";
+        right: 0;
+    }
+
+    100% {
+        content: "";
+        right: 0;
+    }
+}
+/*Конец стиля забаганных кнопок
+    Начало чекбокса
+*/
+
+.switch {
+    /* switch */
+    --switch-width: 46px;
+    --switch-height: 24px;
+    --switch-bg: rgb(131, 131, 131);
+    --switch-checked-bg: hsl(var(--mainSettings_GREEN_H), var(--mainSettings_GREEN_S), var(--mainSettings_GREEN_L));
+    --switch-offset: calc((var(--switch-height) - var(--circle-diameter)) / 2);
+    --switch-transition: all .2s cubic-bezier(0.27, 0.2, 0.25, 1.51);
+    /* circle */
+    --circle-diameter: 18px;
+    --circle-bg: #fff;
+    --circle-shadow: 1px 1px 2px rgba(146, 146, 146, 0.45);
+    --circle-checked-shadow: -1px 1px 2px rgba(163, 163, 163, 0.45);
+    --circle-transition: var(--switch-transition);
+    /* icon */
+    --icon-transition: all .2s cubic-bezier(0.27, 0.2, 0.25, 1.51);
+    --icon-cross-color: var(--switch-bg);
+    --icon-cross-size: 6px;
+    --icon-checkmark-color: var(--switch-checked-bg);
+    --icon-checkmark-size: 10px;
+    /* effect line */
+    --effect-width: calc(var(--circle-diameter) / 2);
+    --effect-height: calc(var(--effect-width) / 2 - 1px);
+    --effect-bg: var(--circle-bg);
+    --effect-border-radius: 1px;
+    --effect-transition: all .2s ease-in-out;
+}
+
+.switch input {
+    display: none;
+}
+
+.switch {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+}
+
+.switch svg {
+    -webkit-transition: var(--icon-transition);
+    transition: var(--icon-transition);
+    position: absolute;
+    height: auto;
+}
+
+.switch .checkmark {
+    width: var(--icon-checkmark-size);
+    color: var(--icon-checkmark-color);
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.switch .cross {
+    width: var(--icon-cross-size);
+    color: var(--icon-cross-color);
+}
+
+.slider {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: var(--switch-width);
+    height: var(--switch-height);
+    background: var(--switch-bg);
+    border-radius: 999px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    -webkit-transition: var(--switch-transition);
+    transition: var(--switch-transition);
+    cursor: pointer;
+}
+
+.circle {
+    width: var(--circle-diameter);
+    height: var(--circle-diameter);
+    background: var(--circle-bg);
+    border-radius: inherit;
+    -webkit-box-shadow: var(--circle-shadow);
+    box-shadow: var(--circle-shadow);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transition: var(--circle-transition);
+    transition: var(--circle-transition);
+    z-index: 1;
+    position: absolute;
+    left: var(--switch-offset);
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    width: var(--effect-width);
+    height: var(--effect-height);
+    left: calc(var(--switch-offset) + (var(--effect-width) / 2));
+    background: var(--effect-bg);
+    border-radius: var(--effect-border-radius);
+    -webkit-transition: var(--effect-transition);
+    transition: var(--effect-transition);
+}
+
+/* actions */
+
+.switch input:checked+.slider {
+    background: var(--switch-checked-bg);
+}
+
+.switch input:checked+.slider .checkmark {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+.switch input:checked+.slider .cross {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.switch input:checked+.slider::before {
+    left: calc(100% - var(--effect-width) - (var(--effect-width) / 2) - var(--switch-offset));
+}
+
+.switch input:checked+.slider .circle {
+    left: calc(100% - var(--circle-diameter) - var(--switch-offset));
+    -webkit-box-shadow: var(--circle-checked-shadow);
+    box-shadow: var(--circle-checked-shadow);
+}
+/* Конец чекбокса
+    начало скачущего переключателя
+*/
+
+
+.radio-input {
+    display: flex;
+    flex-direction: row;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    overflow: auto;
+}
+
+.input {
+    -webkit-appearance: none;
+    display: block;
+    margin: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    vertical-align: middle;
+    box-shadow: hsla(0, 0%, 100%, .15) 0 1px 1px, inset hsla(0, 0%, 0%, .5) 0 0 0 1px;
+    background-color: hsla(0, 0%, 0%, .2);
+    background-image: -webkit-radial-gradient(hsla(var(--mainSettings_GREEN_H),
+            var(--mainSettings_GREEN_S),
+            var(--mainSettings_GREEN_L),
+            var(--mainSettings_GREEN_A)) 0%,
+        hsla(var(--mainSettings_GREEN_H),
+            var(--mainSettings_GREEN_S),
+            var(--mainSettings_GREEN_L),
+            var(--mainSettings_GREEN_A)) 15%,
+        hsla(var(--mainSettings_GREEN_H),
+            var(--mainSettings_GREEN_S),
+            var(--mainSettings_GREEN_L),
+            0.3) 28%,
+        hsla(var(--mainSettings_GREEN_H),
+            var(--mainSettings_GREEN_S),
+            var(--mainSettings_GREEN_L),
+            0) 70%);
+    background-repeat: no-repeat;
+    -webkit-transition: background-position .15s cubic-bezier(.8, 0, 1, 1),
+        -webkit-transform .25s cubic-bezier(.8, 0, 1, 1);
+    outline: none;
+}
+
+.input:checked {
+    -webkit-transition: background-position .2s .15s cubic-bezier(0, 0, .2, 1),
+        -webkit-transform .25s cubic-bezier(0, 0, .2, 1);
+}
+
+.input:active {
+    -webkit-transform: scale(1.5);
+    -webkit-transition: -webkit-transform .1s cubic-bezier(0, 0, .2, 1);
+}
+
+.input,
+.input:active {
+    background-position: 24px 0px;
+}
+
+.input:checked {
+    background-position: 0 0;
+}
+
+.input:checked~.input,
+.input:checked~.input:active {
+    background-position: -24px 0px;
+}
+
+
+
+/*Кнопка удалить*/
+.button {
+    position: relative;
+    width: 100%;
+    height: 7vh;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: none;
+    background-color: #e50000;
+    overflow: hidden;
+}
+
+.button,
+.button__icon,
+.button__text {
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s ease-in-out;
+}
+
+.button .button__text {
+    -webkit-transform: translateX(5.5vw);
+    -ms-transform: translateX(5.5vw);
+    transform: translateX(5.5vw);
+    color: #fff;
+    font-weight: 600;
+    width: 4vw;
+}
+
+.button .button__icon {
+    position: absolute;
+    -webkit-transform: translateX(12vw);
+    -ms-transform: translateX(12vw);
+    transform: translateX(12vw);
+    height: 100%;
+    width: 20%;
+    background-color: #cc0000;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.button .svg {
+    width: 20px;
+}
+
+.button:hover {
+    background: #cc0000;
+}
+
+.button:hover .button__text {
+    color: transparent;
+}
+
+.button:hover .button__icon {
+    -webkit-transform: translateX(0vw);
+    -ms-transform: translateX(0vw);
+    transform: translateX(0vw);
+    width: 100%;
+}
+
+.button:active .button__icon {
+    background-color: #b20000;
+}
+
+.button:active {
+    border: 1px solid #b20000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

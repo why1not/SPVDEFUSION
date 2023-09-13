@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+
+
+}
+@font-face {
+    font-family: 'ss';
+    src: url('../assets/Srbija\ Sans.otf');
+}
+body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: max-content;
+    min-height: 100vh;
+    width: 100vw;
+}
+*::-webkit-scrollbar {
+    width: 0vw;
+    height: 0vh;
+}
+*::-webkit-scrollbar-thumb {
+    border-radius: 100px !important;
+    background-color: var(--ak);
+}
+/*
+img{
+    image-rendering: pixelated;
+}
+*/
+[hidden] {
+    display: none !important;
+}
+.btnSelectedHead {
+    background-color: var(--ak);
+}
+.btnSelectedIvents {
+    background-color: var(--ak);
+}
+.LogoHead{
+    text-decoration: none;
+}
+
+.toastify{
+    background: var(--toastify_notify) !important;
+    box-shadow: 0 3px 6px -1px rgba(0, 0, 0, .12),
+        0 10px 36px -4px var(--li) !important;
+}
