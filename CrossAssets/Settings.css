@@ -53,9 +53,13 @@
 }
 .selectedcheckHSB{
     background-color: var(--Settings_is_open) !important;
+    left: 15vw !important; 
 }
 .selectedcheckHSB:hover{
     background-color: var(--PLS_CloseSettings) !important;
+}
+.CSPAN_NewClass{
+    left: 0vw;
 }
 
 .CSP_Group{

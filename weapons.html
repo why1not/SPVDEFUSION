@@ -29,7 +29,7 @@
 </head>
 <body>
     <!--Сортировки, поиски и т.д-->
-    <article class="Window_One">
+    <article class="Window_One" >
         <div class="header">
             <a class="LogoHead" href="./index.html">
                 <p>Справочник</p>
@@ -381,8 +381,20 @@
             <div class="WeaponPrevIMGZone">
                 <div class="WPIZ_Area">
                     <img src="" id="WPView_Image">
-                    <div class="SkinsZone containerskins" hidden id="containerSkinwWpis">
+                    <div class="LoadingCanvasArea" id="LoadersCanvas" hidden>
+                        <div class="banter-loader">
+                            <div class="banter-loader__box"></div>
+                            <div class="banter-loader__box"></div>
+                            <div class="banter-loader__box"></div>
+                            <div class="banter-loader__box"></div>
+                            <div class="banter-loader__box"></div>
+                            <div class="banter-loader__box"></div>
+                            <div class="banter-loader__box"></div>
+                            <div class="banter-loader__box"></div>
+                            <div class="banter-loader__box"></div>
+                        </div>
                     </div>
+                    <!--<div class="SkinsZone containerskins" hidden id="containerSkinwWpis"></div>-->
                 </div>
                 <div class="WPIZ_Buttons">
                 </div>
@@ -479,6 +491,7 @@
     </article>
     <!--Ноды для клонирования: Карточки, колонки и т.д-->
     <div class="CloneNODE" hidden>
+        <div id="ToDoGet3dName"></div>
         <!---->
         <!--Карточка оружия-->
         <div class="card" id="NodeToClone_MainCard">
@@ -690,11 +703,6 @@
     </aside>
     <script src="./CrossAssets/Thems/Thems.js"></script>
 
-    <!--
-        https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js
-        https://cdn.rawgit.com/mrdoob/three.js/master/examples/js/loaders/GLTFLoader.js
-    -->
-
-    <input>
+    
 </body>
 </html>

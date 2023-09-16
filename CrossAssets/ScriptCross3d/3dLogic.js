@@ -17,24 +17,37 @@ const canvas = document.getElementById('CANVAS_MAIN_CARD_3D');
 const renderer = new THREE.WebGLRenderer({
     alpha: true,
     antialias: true,
+    pixelRatio: 0.1,
     canvas
 });
 const scene = new THREE.Scene();
 const loader = new THREE.TextureLoader();
 
+/**
+ (min - width: 768 px) Пк
+ (max - width: 767 px) Телефоны
+ */
+var aspect = 0;
+//if (window.innerWidth >= 768) {
+const canvas2 = renderer.domElement;
+const width = canvas2.clientWidth;
+const height = canvas2.clientHeight;
+aspect = (width) / (height);
+renderer.setSize(width, height);
+//} else {
+//    aspect = (window.innerWidth * 0.9) / (window.innerHeight * 0.4);
+//const canvasWidth = window.innerWidth * 0.9;
+//const canvasHeight = window.innerHeight * 0.4;
+//renderer.setSize(canvasWidth, canvasHeight);
+//}
+
+
 const fov = 45; // Угол обзора
-const aspect = (window.innerWidth * 0.4) / (window.innerHeight * 0.8); // Соотношение сторон
 const near = 0.001; // Ближняя плоскость отсечения
 const far = 2000; // Дальняя плоскость отсечения
 const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 camera.position.set(10, 3, 10); // отдалим камеру по оси Z
 
-
-
-const canvasWidth = window.innerWidth * 0.4;
-const canvasHeight = window.innerHeight * 0.8;
-//alert(canvasWidth+"  fff  "+canvasHeight);
-renderer.setSize(canvasWidth, canvasHeight);
 
 
 
@@ -60,9 +73,20 @@ const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
 cube.position.set(0, 0, 0);
 
 
+let d3d_obj; 
+
+const divElement = document.getElementById("ToDoGet3dName");
+
+// Создаем событийный слушатель для события "input"
+divElement.addEventListener("change", function () {
+    // Извлекаем значение атрибута "имя"
+    var nameAttribute = divElement.getAttribute("todoget3dname");
+    d3d_obj = './assets/3d_assets/guns/' + nameAttribute;
+});
+
 const objLoader = new GLTFLoader();
 let model;
-objLoader.load('./assets/3d_assets/guns/RD_NTW20_RETRO.glb', (gltf) => {
+objLoader.load(d3d_obj, (gltf) => {
     model = gltf.scene;
     model.scale.set(4, 4, 4); // Увеличиваем масштаб в 4 раза по всем осям
 
@@ -165,6 +189,13 @@ controls.enablePan = false; // Отключаем перемещение
 controls.update();
 
 
+
+
+
+
+
+
+
 const ambientLight = new THREE.AmbientLight(0xffffff, 10); // Цвет и интенсивность
 //ambientLight.position.set(5, 10, 0);
 //ambientLight.target.position.set(-5, 0, 0);
@@ -190,7 +221,12 @@ renderer.setClearColor(0x000000, 0);
 
 
 function animateCube() {
-    cube.rotation.z += 0.01; // Увеличиваем угол вращения
+    //cube.rotation.z += 0.01; // Увеличиваем угол вращения// Получите текущее положение камеры
+    //const cameraPosition = camera.position;
+
+    // Выведите координаты x, y, z
+    //console.log(`X: ${cameraPosition.x}, Y: ${cameraPosition.y}, Z: ${cameraPosition.z}`);
+    
 }
 
 // Создаем функцию анимации и вызываем ее в цикле

@@ -179,13 +179,11 @@ function clearLocalStorageKeys() {
 
 function animatePanel(chek) {
     if (chek.name == 'disable') {
-        document.querySelector('.CSPanels').style.left = "0vw";
-        document.querySelector('.HoveredSettingsButton').style.left = "15vw";
+        document.querySelector('.CSPanels').className = "CSPanels CSPAN_NewClass";
         document.querySelector('.HoveredSettingsButton').className = "HoveredSettingsButton selectedcheckHSB";
         chek.name = 'enable';
     } else {
-        document.querySelector('.CSPanels').style.left = "-15vw";
-        document.querySelector('.HoveredSettingsButton').style.left = "0vw";
+        document.querySelector('.CSPanels').className = "CSPanels";
         document.querySelector('.HoveredSettingsButton').className = "HoveredSettingsButton";
         chek.name = 'disable';
     }

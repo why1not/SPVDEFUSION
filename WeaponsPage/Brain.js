@@ -17,7 +17,7 @@ $(document).ready(function () {
     $.get(depthUrl, function (response) {
         var depth = response.values.length;
         // Формирование диапазона
-        var range = `${sheetName}!A2:V${depth + 1}`;
+        var range = `${sheetName}!A2:AC${depth + 1}`;
         var dataUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
         // Получение данных
         $.get(dataUrl, function (response) {
@@ -51,7 +51,8 @@ $(document).ready(function () {
                 'StockReinforcedArmorBody': row[24],    // Сток | Укреп | Тело
                 'FullNoArmorBody': row[25],             // Фулл | Без брони | Тело
                 'FullNormalArmorBody': row[26],         // Фулл | Обыч | Тело
-                'FullReinforcedArmorBod': row[27]       // Фулл | Укреп | Тело
+                'FullReinforcedArmorBod': row[27],      // Фулл | Укреп | Тело
+                'd3d_Name': row[28] 
             }));
             //console.table(jsonData);
         });
@@ -451,6 +452,12 @@ function GETNameFromCard(card) {
             imageElement.setAttribute("src", "./assets/ItemIcons/" + matchingRow.Image + ".png");
             imageElement.setAttribute("alt", weaponName);
         }
+        var canvasElement = document.getElementById("CANVAS_MAIN_CARD_3D");
+        if (canvasElement) {
+            // "./assets/ItemIcons/" + matchingRow.Image + ".png"
+            document.getElementById("ToDoGet3dName").setAttribute("Name3dObj", matchingRow.d3d_Name + ".glb");
+            document.getElementById("ToDoGet3dName").setAttribute("Loader3dIS", "DO_LOADING");
+        }
     }
     if (document.getElementById("WPView_damageSt") != '') {
         OpenWindowTwo();
@@ -738,7 +745,7 @@ function TimeConque() {
     document.getElementById('CollTime6').textContent = CSLeg1.timeToKill;
     document.getElementById('CollTime7').textContent = CSLeg2.timeToKill;
     document.getElementById('CollTime8').textContent = CSLeg3.timeToKill;
-    console.error(CShead.totalDamage + " : " + CShead.shotsToKill + " : " + CShead.timeToKill)
+    //console.error(CShead.totalDamage + " : " + CShead.shotsToKill + " : " + CShead.timeToKill)
 }
 function calculateStats(GEDON, head) {
     //var GEDON = 1.0;

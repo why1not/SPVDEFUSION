@@ -657,7 +657,7 @@
     .WPIZ_Area {
         height: 80%;
         width: 100%;
-        display: grid;
+        display: flex;
         place-items: center;
         background: var(--ba);
         background: radial-gradient(circle, var(--li) 0%, var(--tr) 50%);
